@@ -1,0 +1,16 @@
+menuconfig LIBUKTTY_NS16550
+	bool "NS16550 / 8250"
+	depends on ARCH_ARM_64
+	select LIBUKOFW
+
+if LIBUKTTY_NS16550
+
+config LIBUKTTY_NS16550_EARLY_CONSOLE
+	bool "Early console"
+	select LIBUKBOOT
+	help
+		Uses the fdt's `/chosen/stdout-path` to derive the
+		default console. Override by setting `ns16550.base`
+		at the cmdline, if LIBUKLIBPARAM is enabled.
+
+endif

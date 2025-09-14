@@ -1,0 +1,14 @@
+---
+specification: '0.5'
+name: helloworld
+unikraft:
+  version: stable
+targets:
+  - architecture: x86_64
+    platform: qemu
+  - architecture: arm64
+    platform: qemu
+  - architecture: x86_64
+    platform: firecracker
+  - architecture: arm64
+    platform: firecracker

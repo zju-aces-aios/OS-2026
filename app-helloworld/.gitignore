@@ -1,0 +1,5 @@
+/.config*
+/workdir/build/
+/.unikraft/
+# /workdir/
+.DS_Store
