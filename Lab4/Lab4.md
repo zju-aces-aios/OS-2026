@@ -211,7 +211,6 @@ sudo ln -s /usr/lib/x86_64-linux-gnu/libncurses.so.6 \
 #### 2. 运行 Hexagon 模拟器
 
 ```bash
-cd dsp
 export DSP_BUILD_DIR=dsp/hexagon_Debug_toolv88_v79
 
 ${HEXAGON_SDK_ROOT}/tools/HEXAGON_Tools/8.8.06/Tools/bin/hexagon-sim \
@@ -240,3 +239,4 @@ ${HEXAGON_SDK_ROOT}/tools/HEXAGON_Tools/8.8.06/Tools/bin/hexagon-sim \
 - **设备连接**：如果 ADB 无法识别设备，检查 SSH 隧道是否正常建立
 - **编译错误**：确保所有必要的环境变量都已正确设置
 - **libinfo.so.5报错**：如果遇到缺少libinfo5的报错，执行`sudo apt install libtinfo5`
+或者执行`ln -s /usr/lib/x86_64-linux-gnu/libtinfo.so.6 /usr/lib/x86_64-linux-gnu/libtinfo.so.5`
