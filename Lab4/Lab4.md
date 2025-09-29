@@ -12,7 +12,7 @@
 
 ---
 
-## 环境准备
+## 环境准备https://github.com/zju-aces-aios/OS-2026/blob/main/Lab4/Lab4.md
 
 ### Hexagon SDK 安装
 
@@ -239,3 +239,4 @@ ${HEXAGON_SDK_ROOT}/tools/HEXAGON_Tools/8.8.06/Tools/bin/hexagon-sim \
 - **环境变量**：每次新开终端时需要重新 source Hexagon 环境变量
 - **设备连接**：如果 ADB 无法识别设备，检查 SSH 隧道是否正常建立
 - **编译错误**：确保所有必要的环境变量都已正确设置
+- **libinfo.so.5报错**：如果遇到缺少libinfo5的报错，执行`sudo apt install libtinfo5`
