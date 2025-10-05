@@ -28,7 +28,7 @@ int main(int argc, char* argv[]) {
   int i;
 #endif
 
-  void* p = malloc(3 * 1024);
+  void* p = malloc(4096);
 //   void* p = malloc(2 * 128);
   free(p);
 
