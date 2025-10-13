@@ -37,7 +37,7 @@ sudo dpkg -i <your-qpm-package>.deb
 qpm-cli --login <username>/<email>
 # 激活许可证并安装指定版本（示例：HexagonSDK6.x）
 qpm-cli --license-activate HexagonSDK6.x
-sudo qpm-cli --install HexagonSDK6.x
+sudo qpm-cli --install HexagonSDK6.x --version 6.3.0.0
 ```
 
 3. 找到 QPM 安装位置（QPM 的默认安装路径可能因环境而异）。如果不确定安装目录，可以用下面命令搜索已安装的 Hexagon SDK 目录（通常在/local/mnt/workspace/Qualcomm/Hexagon_SDK/6.3.0.0）：
@@ -190,7 +190,7 @@ make hexagon BUILD=Debug DSP_ARCH=v79
 
 #### 3. 编译 Android 测试工具
 
-**执行下列命令前，确保自己处于`/OS-2026/Lab4`目录**
+**执行下列命令前，确保自己处于`/OS-2026/Lab4`目录且 NPU 代码已经编译成功**
 
 ```bash
 source $HEXAGON_SDK_PATH/setup_sdk_env.source
