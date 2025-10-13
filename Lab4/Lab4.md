@@ -12,7 +12,7 @@
 
 ---
 
-## 环境准备https://github.com/zju-aces-aios/OS-2026/blob/main/Lab4/Lab4.md
+## 环境准备
 
 ### Hexagon SDK 安装
 
@@ -145,6 +145,8 @@ E. 小结
 
 ### 编译 NPU 代码
 
+**执行下列命令前，确保自己处于`/OS-2026/Lab4`目录**
+
 首先设置 Hexagon SDK 环境并编译 DSP 代码：
 
 ```bash
@@ -185,7 +187,10 @@ make hexagon BUILD=Debug DSP_ARCH=v79
 
 #### 3. 编译 Android 测试工具
 
+**执行下列命令前，确保自己处于`/OS-2026/Lab4`目录**
+
 ```bash
+source $HEXAGON_SDK_PATH/setup_sdk_env.source
 mkdir build
 cd build
 cmake -DANDROID_ABI=arm64-v8a -DANDROID_PLATFORM=android-24 \
@@ -195,6 +200,8 @@ make
 ```
 
 #### 4. 部署并运行测试
+
+**执行下列命令前，确保自己处于`/OS-2026/Lab4/build`目录**
 
 1. **推送文件到设备**
    
