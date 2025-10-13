@@ -194,8 +194,8 @@ source $HEXAGON_SDK_PATH/setup_sdk_env.source
 mkdir build
 cd build
 cmake -DANDROID_ABI=arm64-v8a -DANDROID_PLATFORM=android-24 \
-  -DCMAKE_TOOLCHAIN_FILE=$ANDROID_NDK_ROOT/build/cmake/android.toolchain.cmake \
-  -DHEXAGON_SDK_ROOT=$HEXAGON_SDK_ROOT ..
+   -DCMAKE_TOOLCHAIN_FILE=$ANDROID_NDK_ROOT/build/cmake/android.toolchain.cmake \
+   -DHEXAGON_SDK_ROOT=$HEXAGON_SDK_ROOT ..
 make
 ```
 
@@ -264,3 +264,165 @@ ${HEXAGON_SDK_ROOT}/tools/HEXAGON_Tools/8.8.06/Tools/bin/hexagon-sim \
 - **编译错误**：确保所有必要的环境变量都已正确设置
 - **libinfo.so.5报错**：如果遇到缺少libinfo5的报错，执行`sudo apt install libtinfo5`
 或者执行`ln -s /usr/lib/x86_64-linux-gnu/libtinfo.so.6 /usr/lib/x86_64-linux-gnu/libtinfo.so.5`
+
+## 使用 Hexagon 指令集优化矩阵乘法
+
+### HVX 指令参考手册
+
+HVX（Hexagon Vector eXtensions）是高通Hexagon DSP的向量扩展指令集，专门用于加速并行计算。以下是矩阵乘法优化中最常用的核心指令及其作用原理。
+
+#### 基本概念：向量化处理
+
+**HVX向量宽度**
+```
+一个 HVX_Vector = 32个float（128字节，1024位）
+
+标量处理:  [a] × [b] = [c]           (一次处理1个元素)
+向量处理:  [a₁ a₂ ... a₃₂] × [b₁ b₂ ... b₃₂] = [c₁ c₂ ... c₃₂]  (一次处理32个元素)
+```
+
+#### 核心HVX指令功能说明
+
+**1. 标量广播指令 - `Q6_V_vsplat_R()`**
+
+**作用**: 将一个标量值复制到向量的所有32个位置
+
+```
+输入标量: 3.14
+      ↓ vsplat
+输出向量: [3.14, 3.14, 3.14, ..., 3.14]  (32个相同值)
+```
+
+**应用场景**: 在矩阵乘法中，将矩阵A的一个元素与矩阵B的一行进行向量乘法
+
+**示例**: `HVX_Vector vector1 = Q6_V_vsplat_R(float_to_bits(3.14f));`
+
+
+**2. 零向量创建 - `Q6_V_vzero()`**
+
+**作用**: 创建所有元素都为0的向量，用作累加器初始化
+
+```
+输出: [0.0, 0.0, 0.0, ..., 0.0]  (32个零)
+```
+
+**示例**: `HVX_Vector vZero = Q6_V_vzero();`
+
+
+**3. 向量乘法指令 - `Q6_Vqf32_vmpy_VsfVsf()`**
+
+**作用**: 对两个向量进行逐元素相乘（SIMD乘法）
+
+```
+向量A: [a₁, a₂, a₃, ..., a₃₂]
+向量B: [b₁, b₂, b₃, ..., b₃₂]
+      ↓ 向量乘法
+结果:  [a₁×b₁, a₂×b₂, a₃×b₃, ..., a₃₂×b₃₂]
+```
+
+**加速效果**: 一条指令完成32次浮点乘法运算
+
+**示例**: `HVX_Vector mul = Q6_Vqf32_vmpy_VsfVsf(vector1, vector2);`
+
+
+**4. 向量加法指令 - `Q6_Vqf32_vadd_Vqf32Vqf32()`**
+
+**作用**: 对两个向量进行逐元素相加（SIMD加法）
+
+```
+向量A: [a₁, a₂, a₃, ..., a₃₂]
+向量B: [b₁, b₂, b₃, ..., b₃₂]
+      ↓ 向量加法
+结果:  [a₁+b₁, a₂+b₂, a₃+b₃, ..., a₃₂+b₃₂]
+```
+
+**示例**: `HVX_Vector sum = Q6_Vqf32_vadd_Vqf32Vqf32(vector1, vector2);`
+
+
+**5. 向量旋转指令 - `Q6_V_vror_VR()`**
+
+**作用**: 将向量中的元素循环右移，用于向量归约（reduction），此示例中，位移距离为4
+值得注意的是，虽然名称叫右移，实际上是将数据向数组下标减少的方向移动。
+
+手册中的描述是：
+```
+Perform a right rotate vector operation on vector register Vu, by the number of bytes specified by
+the lower bits of Rt. The result is written into Vd. Byte[i] moves to Byte[(i+N-R)%N], where R is the
+right rotate amount in bytes, and N is the vector register size in bytes.
+```
+
+![Q6_V_vror_VR手册描述图](./Q6_V_vror_VR.png)
+
+```
+原向量: [a₁, a₂, a₃, a₄, a₅, a₆, a₇, a₈]
+右移4位: [a₅, a₆, a₇, a₈, a₁, a₂, a₃, a₄]
+```
+
+**归约过程示意** (以8元素为例):
+```
+步骤1: [a₁, a₂, a₃, a₄, a₅, a₆, a₇, a₈] + 右移4位 → [a₁+a₅, a₂+a₆, a₃+a₇, a₄+a₈, *, *, *, *]
+步骤2: 上述结果 + 右移2位 → [a₁+a₅+a₃+a₇, a₂+a₆+a₄+a₈, *, *, *, *, *, *]  
+步骤3: 上述结果 + 右移1位 → [总和, *, *, *, *, *, *, *]
+```
+
+**示例**: `HVX_Vector vector = Q6_V_vror_VR(vector_original, 16 * sizeof(float))`
+
+
+**6. 数据格式转换 - `Q6_Vsf_equals_Vqf32()`**
+
+**作用**: 将QF32格式转换为SF格式并进行饱和处理，需要参考 Hexagon 手册，注意一些函数的入参是 qf32 还是 sf，如果参数不对需要进行转换
+
+```
+QF32格式 (高精度中间格式) → SF格式 (标准浮点格式)
+用于防止计算溢出，确保结果精度
+```
+
+**示例**: `HVX_Vector vector_sf = Q6_Vsf_equals_Vqf32(vector_qf32);`
+
+#### 关键优化概念
+
+**1. 内存对齐要求**
+- HVX向量要求128字节对齐
+- 非对齐访问需使用`memcpy()`避免性能损失（将非对齐的内存，memcopy 到数据类型为 HVX_Vector 的变量）
+
+**2. 边界处理策略**
+- 主循环: 处理能被32整除的部分（向量化）
+- 尾部循环: 处理剩余元素（标量化）
+
+**3. 数据格式说明**
+- **SF**: 标准IEEE 754单精度浮点格式
+- **QF32**: 高精度定点格式，用于中间计算防止溢出
+
+#### 实际应用示例
+
+**矩阵乘法的两种HVX优化模式**
+
+**模式1: ikj循环顺序（外积形式）**
+```
+优势: 可以充分利用向量广播
+过程: A[i][k] × B[k][j:j+31] → C[i][j:j+31]
+      ↑ 广播1个值    ↑ 加载32个值    ↑ 更新32个值
+```
+
+**模式2: ijk循环顺序（内积形式）**  
+```
+优势: 更好的缓存局部性，适合转置矩阵
+过程: A[i][k:k+31] · B[j][k:k+31] → C[i][j] (点积)
+      ↑ 加载32个值   ↑ 加载32个值      ↑ 归约为1个值
+```
+
+#### 性能提升原理
+
+**计算密度提升**
+```
+标量版本: 1条指令 = 1次浮点运算
+HVX版本:  1条指令 = 32次浮点运算
+理论加速: 32倍
+```
+
+**内存带宽优化**
+```
+标量版本: 每次访问4字节 (1个float)
+HVX版本:  每次访问128字节 (32个float)
+内存效率: 提升32倍
+```
