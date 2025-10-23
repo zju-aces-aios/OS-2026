@@ -104,6 +104,16 @@ static inline void matmul_ikj_transposed_b(float *restrict input_matrix1,
 	return;
 }
 
+// 拿到 float 的二进制表示
+static inline int32_t float_to_bits(float input)
+{
+    union {
+        float f;
+        int32_t i;
+    } fp32 = {.f = input};
+    return fp32.i;
+}
+
 int calculator_gemm(remote_handle64 h, 
 					const float* input_matrix1,
 					int input_matrix1Len,
@@ -146,23 +156,48 @@ int calculator_gemm(remote_handle64 h,
 #define SIMULATOR_TEST
 #ifdef SIMULATOR_TEST
 
-int main(int argc, char* argv[]) {
-    if (argc != 4) {
-        printf("ERROR: Invalid arguments.\n");
-        printf("Usage: %s <M> <K> <N>\n", argv[0]);
-        return -1;
+static int verify_naive(float *A, float *B, float *C, uint32_t m, uint32_t k, uint32_t n, int transY) {
+    int ok = 1;
+    int output_len = m * n;
+    float *ref = (float*)malloc(output_len * sizeof(float));
+    if (!ref) return 0;
+    for (uint32_t i = 0; i < m; ++i) {
+        for (uint32_t j = 0; j < n; ++j) {
+            float s = 0.0f;
+            if (transY) {
+                for (uint32_t l = 0; l < k; ++l) {
+                    s += A[i * k + l] * B[j * k + l];
+                }
+            } else {
+                for (uint32_t l = 0; l < k; ++l) {
+                    s += A[i * k + l] * B[l * n + j];
+                }
+            }
+            ref[i * n + j] = s;
+        }
     }
 
-    uint32_t m = atoi(argv[1]);
-    uint32_t k = atoi(argv[2]);
-    uint32_t n = atoi(argv[3]);
-    printf("Starting GEMM test in simulator: M=%lu, K=%lu, N=%lu\n", m, k, n);
+    for (int idx = 0; idx < output_len; ++idx) {
+        float a = ref[idx];
+        float b = C[idx];
+        float diff = a - b;
+        if (diff < 0) diff = -diff;
+        if (diff > 1e-3f) {
+            ok = 0;
+            break;
+        }
+    }
 
+    free(ref);
+    return ok;
+}
+
+static int run_single_test(uint32_t m, uint32_t k, uint32_t n, int transY) {
     int input1_len = m * k;
     int input2_len = k * n;
     int output_len = m * n;
+    const int align_size = 128;
 
-    const int align_size = 128; 
     float* matrix1 = (float*)memalign(align_size, input1_len * sizeof(float));
     float* matrix2 = (float*)memalign(align_size, input2_len * sizeof(float));
     float* output_matrix = (float*)memalign(align_size, output_len * sizeof(float));
@@ -174,42 +209,58 @@ int main(int argc, char* argv[]) {
         if (output_matrix) free(output_matrix);
         return -1;
     }
-    printf("Memory allocated successfully.\n");
 
-    for (int i = 0; i < input1_len; ++i) {
-        matrix1[i] = 1.0f;
-    }
-    for (int i = 0; i < input2_len; ++i) {
-        matrix2[i] = 2.0f;
-    }
-
+    for (int i = 0; i < input1_len; ++i) matrix1[i] = 1.0f;
+    for (int i = 0; i < input2_len; ++i) matrix2[i] = 2.0f;
     memset(output_matrix, 0, output_len * sizeof(float));
-    printf("Input matrices initialized.\n");
 
-    printf("Calling calculator_gemm...\n");
-    int result = calculator_gemm(0, 
+    printf("\nCalling calculator_gemm (transY=%d)...\n", transY);
+    unsigned int start_time = HAP_perf_get_time_us();
+    int result = calculator_gemm(0,
                                  matrix1, input1_len,
                                  matrix2, input2_len,
                                  output_matrix, output_len,
                                  m, k, n,
-                                 FALSE, FALSE);
+                                 FALSE, transY ? TRUE : FALSE);
+    unsigned int end_time = HAP_perf_get_time_us();
+    unsigned int elapsed_time_ms = (end_time - start_time) / 1000;
 
     if (result == 0) {
-        printf("GEMM function executed successfully. PASSED.\n");
-        float expected_val = (float)k * 2.0f;
-        printf("Expected value for each element: %f\n", expected_val);
-        printf("Actual first element: %f\n", output_matrix[0]);
-        printf("Actual last element: %f\n", output_matrix[output_len - 1]);
+        printf("GEMM executed successfully. Time: %u ms\n", elapsed_time_ms);
+        int ok = verify_naive(matrix1, matrix2, output_matrix, m, k, n, transY);
+        if (ok) {
+            printf("Verification: PASSED (transY=%d)\n", transY);
+        } else {
+            printf("Verification: FAILED (transY=%d)\n", transY);
+        }
     } else {
-        printf("GEMM function FAILED with error code %d.\n", result);
+        printf("GEMM FAILED with error %d\n", result);
     }
 
     free(matrix1);
     free(matrix2);
     free(output_matrix);
-    printf("Memory freed. Test finished.\n");
-
     return result;
+}
+
+int main(int argc, char* argv[]) {
+    printf("\n\n\n\n\n=====================================\n");
+    if (argc != 4) {
+        printf("ERROR: Invalid arguments.\n");
+        printf("Usage: %s <M> <K> <N>\n", argv[0]);
+        return -1;
+    }
+
+    uint32_t m = atoi(argv[1]);
+    uint32_t k = atoi(argv[2]);
+    uint32_t n = atoi(argv[3]);
+    printf("Starting GEMM test in simulator: M=%lu, K=%lu, N=%lu\n", m, k, n);
+
+    int r0 = run_single_test(m, k, n, 0);
+    int r1 = run_single_test(m, k, n, 1);
+
+    printf("=====================================\n\n\n\n\n");
+    return (r0 == 0 && r1 == 0) ? 0 : -1;
 }
 
 #endif // SIMULATOR_TEST
