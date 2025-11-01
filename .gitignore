@@ -1,2 +1,5 @@
 app-helloworld/workdir/build
 .DS_Store
+.vscode
+Android
+Qualcomm
