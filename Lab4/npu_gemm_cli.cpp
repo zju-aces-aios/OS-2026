@@ -3,6 +3,7 @@
 #include <vector>
 #include <algorithm>
 #include <chrono>
+#include <string>
 
 #include "calculator-api.h"
 
@@ -36,6 +37,77 @@ void cpu_gemm_naive(
 			C[m * N + n] = sum;
 		}
 	}
+}
+
+static int verify_naive(const std::vector<float>& A,
+						const std::vector<float>& B,
+						const std::vector<float>& C,
+						uint32_t M, uint32_t K, uint32_t N,
+						bool transY)
+{
+	std::vector<float> ref(M * N);
+	cpu_gemm_naive(A.data(), B.data(), M, K, N, ref.data(), false, transY);
+
+	const float tol = 1e-3f;
+	int diff_count = 0;
+	for (size_t i = 0; i < ref.size(); ++i) {
+		float a = ref[i];
+		float b = C[i];
+		float diff = a - b;
+		if (diff < 0) diff = -diff;
+		if (diff > tol) {
+			diff_count++;
+			if (diff_count <= 10) {
+				printf("  idx=%zu ref=%.6f npu=%.6f diff=%.6f\n", i, a, b, diff);
+			}
+		}
+	}
+	return (diff_count == 0) ? 1 : 0;
+}
+
+static int run_single_test(uint32_t m, uint32_t k, uint32_t n, bool transY, bool cpu_check,
+						   const std::vector<float>& matrix_a, const std::vector<float>& matrix_b,
+						   std::vector<float>& matrix_c)
+{
+	printf("\nCalling NPU GEMM (transY=%d)...\n", transY ? 1 : 0);
+	auto start_time = std::chrono::high_resolution_clock::now();
+	int result = calculator_gemm_cpp(
+		matrix_a.data(),
+		matrix_b.data(),
+		m, k, n,
+		matrix_c.data(),
+		false,
+		transY
+	);
+	auto end_time = std::chrono::high_resolution_clock::now();
+	auto duration = std::chrono::duration_cast<std::chrono::microseconds>(end_time - start_time);
+	double elapsed_ms = duration.count() / 1000.0;
+
+	if (result == 0) {
+		printf("[SUCCESS] NPU GEMM (transY=%d) finished successfully! Time: %.3f ms\n", transY ? 1 : 0, elapsed_ms);
+		printf("NPU Result matrix C (first 10 elements):\n");
+		for (uint32_t i = 0; i < std::min((uint32_t)10, m * n); ++i) {
+			printf("%.6f ", matrix_c[i]);
+		}
+		printf("\n");
+	} else {
+		printf("[FAILURE] NPU GEMM (transY=%d) failed with code %d.\n", transY ? 1 : 0, result);
+		return result;
+	}
+
+	if (cpu_check) {
+		printf("Performing CPU verification for transY=%d...\n", transY ? 1 : 0);
+		int ok = verify_naive(matrix_a, matrix_b, matrix_c, m, k, n, transY);
+		if (ok) {
+			printf("✓ Verification PASSED (transY=%d)\n", transY ? 1 : 0);
+		} else {
+			printf("✗ Verification FAILED (transY=%d)\n", transY ? 1 : 0);
+		}
+	} else {
+		printf("[INFO] Skipping CPU verification for transY=%d.\n", transY ? 1 : 0);
+	}
+
+	return result;
 }
 
 int main(int argc, char* argv[]) {
@@ -78,63 +150,19 @@ int main(int argc, char* argv[]) {
 	fill_matrix(matrix_a.data(), m * k);
 	fill_matrix(matrix_b.data(), n * k);
 
-	printf("Calling NPU for GEMM calculation (A * B^T)...\n");
+	/* Run two tests to mirror simulator behavior: transY = 0 and transY = 1 */
+	std::vector<float> matrix_c0(m * n, 0.0f);
+	std::vector<float> matrix_c1(m * n, 0.0f);
 
-	auto start_time = std::chrono::high_resolution_clock::now();
+	int r0 = run_single_test(m, k, n, false, cpu_check, matrix_a, matrix_b, matrix_c0);
+	int r1 = run_single_test(m, k, n, true, cpu_check, matrix_a, matrix_b, matrix_c1);
 
-	int result = calculator_gemm_cpp(
-		matrix_a.data(),
-		matrix_b.data(),
-		m, k, n,
-		matrix_c.data(),
-		false,
-		true
-	);
-
-	auto end_time = std::chrono::high_resolution_clock::now();
-
-	auto duration = std::chrono::duration_cast<std::chrono::microseconds>(end_time - start_time);
-	double elapsed_ms = duration.count() / 1000.0;
-
-	if (result == 0) {
-		printf("\n[SUCCESS] NPU GEMM (A * B^T) calculation finished successfully!\n");
-		printf("NPU Result matrix C (first 10 elements):\n");
-		for (uint32_t i = 0; i < std::min((uint32_t)10, m * n); ++i) {
-			printf("%.2f ", matrix_c[i]);
-		}
-		printf("\n");
+	printf("\n=================================\n");
+	if (r0 == 0 && r1 == 0) {
+		printf("All tests PASSED (transY=0 and transY=1)\n");
+		return 0;
 	} else {
-		printf("\n[FAILURE] NPU GEMM calculation failed with code %d.\n", result);
-		printf("Please check logcat for more details: adb logcat -s calculator\n");
+		printf("One or more tests FAILED (r0=%d r1=%d)\n", r0, r1);
+		return -1;
 	}
-
-	printf("\nTotal time spent on NPU call: %.3f ms\n", elapsed_ms);
-
-	if (cpu_check) {
-		printf("\nCheck if the result is correct...\n");
-		std::vector<float> cpu_result(m * n, 0.0f);
-		cpu_gemm_naive(matrix_a.data(), matrix_b.data(), m, k, n, cpu_result.data(), false, true);
-		printf("CPU Result matrix C (first 10 elements):\n");
-		for (uint32_t i = 0; i < std::min((uint32_t)10, m * n); ++i) {
-			printf("%.2f ", cpu_result[i]);
-		}
-		printf("\n");
-		int diff_count = 0;
-		for (int i = 0; i < m * n; i++) {
-			float denom = std::max(std::abs(cpu_result[i]), 1e-6f);
-			float percent_error = std::abs(matrix_c[i] - cpu_result[i]) / denom;
-			if (percent_error > 1e-4) {
-				diff_count++;
-			}
-		}
-		if (diff_count == 0) {
-			printf("✓ NPU and CPU results match within tolerance (by percent error)\n");
-		} else {
-			printf("✗ NPU and CPU results mismatch! %d/%d, rate is %f (by percent error).\n", diff_count, m * n, diff_count / (float)(m * n));
-		}
-	} else {
-		printf("\n[INFO] Skipping CPU result verification as per user request.\n");
-	}
-
-	return result;
 }
