@@ -1,0 +1,122 @@
+# 实验二：代码纠错
+
+## 代码
+
+```c
+static void bbuddy_pfree(struct uk_alloc *a, void *obj, unsigned long num_pages)
+{
+	struct uk_bbpalloc *b;
+	chunk_head_t *freed_ch, *to_merge_ch;
+	chunk_tail_t *freed_ct;
+	unsigned long mask;
+
+	UK_ASSERT(a != NULL);
+
+	uk_alloc_stats_count_pfree(a, obj, num_pages);
+	b = (struct uk_bbpalloc *)&a->priv;
+
+	freelist_sanitycheck(b->free_head);
+
+	size_t order = (size_t)num_pages_to_order(num_pages);
+
+	/* if the object is not page aligned it was clearly not from us */
+	UK_ASSERT((((uintptr_t)obj) & (__PAGE_SIZE - 1)) == 0);
+
+	/* First free the chunk */
+	map_free(b, (uintptr_t)obj, 1UL << order);
+
+	/* Create free chunk */
+	freed_ch = (chunk_head_t *)obj;
+	freed_ct = (chunk_tail_t *)((char *)obj
+				    + (1UL << (order + __PAGE_SHIFT))) - 1;
+
+	/* Now, possibly we can coalesce chunks together */
+	while (order < FREELIST_SIZE) {
+		mask = 1UL << (order + __PAGE_SHIFT);
+		if ((unsigned long)freed_ch & mask) {
+			/* This is the "upper" chunk, its buddy is the "lower" chunk */
+			to_merge_ch = (chunk_head_t *)((char *)freed_ch - mask);
+			if (allocated_in_map(b, (uintptr_t)to_merge_ch)
+			    || to_merge_ch->level != order)
+				break; /* Buddy is not free or not of the same order */
+
+			/* Merge with predecessor */
+			freed_ch = to_merge_ch;
+		} else {
+			/* This is the "lower" chunk, its buddy is the "upper" chunk */
+			to_merge_ch = (chunk_head_t *)((char *)freed_ch + mask);
+			if (allocated_in_map(b, (uintptr_t)to_merge_ch)
+			    || to_merge_ch->level != order)
+				break; /* Buddy is not free or not of the same order */
+
+			/* Merge with successor */
+			freed_ct =
+			    (chunk_tail_t *)((char *)to_merge_ch + mask) - 1;
+		}
+
+		/* We are committed to merging, unlink the buddy (to_merge_ch) */
+		*(to_merge_ch->pprev) = to_merge_ch->next;
+		
+		/* FIX: Add NULL check before dereferencing next pointer */
+		if (to_merge_ch->next)
+			to_merge_ch->next->pprev = to_merge_ch->pprev;
+
+		order++;
+	}
+
+	/* Link the new (possibly larger) chunk into the correct free list */
+	freed_ch->level = order;
+	freed_ch->next = b->free_head[order];
+	freed_ch->pprev = &b->free_head[order];
+	freed_ct->level = order; /* Update tail's level as well */
+
+	/* FIX: Add NULL check before dereferencing next pointer */
+	if (freed_ch->next)
+		freed_ch->next->pprev = &freed_ch->next;
+		
+	b->free_head[order] = freed_ch;
+	
+	freelist_sanitycheck(b->free_head);
+
+	uk_bbpalloc_dump_freelist();
+}
+```
+
+## 问题修改
+
+### else块里的问题
+
+```C
+#else
+	uint64_t nr_page_left = 1UL << order;
+//fix 1 to avoid overflow
+	while(nr_page_left) {
+		freed_ch = (chunk_head_t *)obj;
+		freed_ct = (chunk_tail_t *)((char *)obj
+				    + (1UL << __PAGE_SHIFT)) - 1;
+
+		freed_ch->level = 0;
+		freed_ch->next = b->free_head[0];
+		freed_ch->pprev = &b->free_head[0];
+		freed_ct->level = 0;
+
+		freed_ch->next->pprev = &freed_ch->next;
+		b->free_head[0] = freed_ch;
+
+		nr_page_left--;
+		obj = (char *)obj + (1UL << __PAGE_SHIFT);
+    // fix 2 to target the correct begining of next page, instead of next byte
+	}
+#endif
+```
+
+更大的问题：这一块不在合并内存，反而制造了一堆order0的空闲页。
+
+### if0块的潜在问题
+
+``` C
+*(to_merge_ch->pprev) = to_merge_ch->next;
+to_merge_ch->next->pprev = to_merge_ch->pprev; 
+```
+
+如果被合并的伙伴 `to_merge_ch` 恰好是其所在空闲列表的*最后一个*节点，那么 `to_merge_ch->next` 将为 `NULL`。所以加了个if判断。
