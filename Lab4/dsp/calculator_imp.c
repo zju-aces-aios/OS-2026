@@ -114,6 +114,115 @@ static inline int32_t float_to_bits(float input)
     return fp32.i;
 }
 
+static inline void hvx_matmul_outer(float *restrict input_matrix1,
+                              float *restrict input_matrix2,
+                              float *restrict output,
+                              uint32_t m,
+                              uint32_t k,
+                              uint32_t n)
+{
+    for(uint32_t rowA = 0; rowA < m; rowA++){
+        uint32_t nvec = n / 32;
+        //开nvec个累加器和(n-nvec*32)个标量累加器
+        HVX_Vector acc[nvec];
+        for (uint32_t i = 0; i < nvec; i++)
+        {
+            acc[i] = Q6_V_vzero();
+        }
+        float b_tail[n - nvec * 32];
+        memset(b_tail, 0, sizeof(b_tail));
+
+        for(uint32_t colA = 0; colA < k; colA++){
+            //取A矩阵的一行的一个元素，广播成向量
+            float a_element = input_matrix1[rowA * k + colA];
+            HVX_Vector va = Q6_V_vsplat_R(float_to_bits(a_element)); //广播成向量
+            for(uint32_t colB = 0; colB < n; colB+=32){
+                HVX_Vector vb = *(HVX_Vector *)&input_matrix2[colA * n + colB]; //取B矩阵的一行的32个元素
+                // vmpy是乘法, 输入的是SF格式，输出的是QF32格式
+                HVX_Vector mul = Q6_Vqf32_vmpy_VsfVsf(va, vb);
+                acc[colB / 32] = Q6_Vqf32_vadd_Vqf32Vqf32(acc[colB / 32], mul);
+            }
+            //处理B矩阵尾部
+            uint32_t n_end = (nvec * 32);
+            for(uint32_t colB = n_end; colB < n; colB++){
+                b_tail[colB - n_end] += a_element * input_matrix2[colA * n + colB];
+            }
+            
+        }
+        //C矩阵写回一行数据
+        for (uint32_t i = 0; i < nvec; i++)
+        {
+            //acc[i]中是QF32格式，写回时需要转换成SF格式
+            HVX_Vector vector_sf = Q6_Vsf_equals_Vqf32(acc[i]);
+           *(HVX_Vector *) &output[rowA * n + i * 32] = vector_sf;
+        }
+        for (uint32_t i = 0; i < n - nvec * 32; i++)
+        {
+            output[rowA * n + nvec * 32 + i] = b_tail[i];
+        }
+    }
+}
+
+static void hvx_matmul_innner(float *restrict input_matrix1,
+                              float *restrict input_matrix2,
+                              float *restrict output,
+                              uint32_t m,
+                              uint32_t k,
+                              uint32_t n)
+{
+    float *Bt = input_matrix2;
+
+    //内积计算
+    for(uint32_t rowA = 0; rowA < m; rowA++)
+    {
+        for(uint32_t rowBt = 0; rowBt < n; rowBt++)
+        {
+            HVX_Vector q_acc = Q6_V_vzero();  //q_acc向量初始化为32个0,QF32格式
+            
+            float *a_row = &input_matrix1[rowA * k];
+            float *bt_row = &Bt[rowBt * k];
+            //一次可以取32个float
+            uint32_t k_end = (k / 32) * 32; // 向量化部分的长度，这之后需要标量处理
+            int l = 0;
+            for (; l < k_end; l += 32)
+            {
+
+                HVX_Vector va = *(HVX_Vector *)&a_row[l];   // 取32个float
+                HVX_Vector vbt = *(HVX_Vector *)&bt_row[l]; // 取32个float
+
+                // vmpy是乘法, 输入的是SF格式，输出的是QF32格式
+                HVX_Vector mul = Q6_Vqf32_vmpy_VsfVsf(va, vbt);
+                q_acc = Q6_Vqf32_vadd_Vqf32Vqf32(q_acc, mul);
+            }
+
+            //规约求和
+            q_acc = Q6_Vqf32_vadd_Vqf32Vqf32(q_acc, Q6_V_vror_VR(q_acc, 16 * sizeof(float))); 
+            q_acc = Q6_Vqf32_vadd_Vqf32Vqf32(q_acc, Q6_V_vror_VR(q_acc, 8 * sizeof(float)));
+            q_acc = Q6_Vqf32_vadd_Vqf32Vqf32(q_acc, Q6_V_vror_VR(q_acc, 4 * sizeof(float)));
+            q_acc = Q6_Vqf32_vadd_Vqf32Vqf32(q_acc, Q6_V_vror_VR(q_acc, 2 * sizeof(float)));
+            q_acc = Q6_Vqf32_vadd_Vqf32Vqf32(q_acc, Q6_V_vror_VR(q_acc, 1 * sizeof(float)));
+
+            HVX_Vector vector_sf = Q6_Vsf_equals_Vqf32(q_acc);
+            float sum;
+            memcpy(&sum, &vector_sf, sizeof(float));
+            
+
+            // --- 标量尾部处理 ---
+            for (l = k_end; l < k; l++) {
+                sum += a_row[l] * bt_row[l];
+            }
+
+            // 写回output
+            
+            output[rowA * n + rowBt] = sum;
+        }
+    }
+
+    // free(Bt);
+}
+
+
+
 int calculator_gemm(remote_handle64 h, 
 					const float* input_matrix1,
 					int input_matrix1Len,
@@ -145,7 +254,7 @@ int calculator_gemm(remote_handle64 h,
 								(float*)input_matrix2, 
 								output, m, k, n);
 	} else {
-		matmul_ijk((float*)input_matrix1,
+		hvx_matmul_outer((float*)input_matrix1,
 						(float*)input_matrix2,
 						output, m, k, n);
 	}
@@ -221,7 +330,7 @@ static int run_single_test(uint32_t m, uint32_t k, uint32_t n, int transY) {
                                  matrix2, input2_len,
                                  output_matrix, output_len,
                                  m, k, n,
-                                 FALSE, transY ? TRUE : FALSE);
+                                 FALSE, transY);
     unsigned int end_time = HAP_perf_get_time_us();
     unsigned int elapsed_time_ms = (end_time - start_time) / 1000;
 
@@ -261,6 +370,7 @@ int main(int argc, char* argv[]) {
 
     printf("=====================================\n\n\n\n\n");
     return (r0 == 0 && r1 == 0) ? 0 : -1;
+    //return r0 == 0 ? 0 : -1;
 }
 
 #endif // SIMULATOR_TEST

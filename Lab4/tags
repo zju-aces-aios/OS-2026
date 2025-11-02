@@ -1,0 +1,665 @@
+!_TAG_FILE_FORMAT	2	/extended format; --format=1 will not append ;" to lines/
+!_TAG_FILE_SORTED	1	/0=unsorted, 1=sorted, 2=foldcase/
+!_TAG_OUTPUT_EXCMD	mixed	/number, pattern, mixed, or combineV2/
+!_TAG_OUTPUT_FILESEP	slash	/slash or backslash/
+!_TAG_OUTPUT_MODE	u-ctags	/u-ctags or e-ctags/
+!_TAG_PATTERN_LENGTH_LIMIT	96	/0 for no limit/
+!_TAG_PROC_CWD	/home/zzzz/OS-2026/Lab4/	//
+!_TAG_PROGRAM_AUTHOR	Universal Ctags Team	//
+!_TAG_PROGRAM_NAME	Universal Ctags	/Derived from Exuberant Ctags/
+!_TAG_PROGRAM_URL	https://ctags.io/	/official site/
+!_TAG_PROGRAM_VERSION	5.9.0	//
+$(SUPPORTED_VS)	dsp/all.mak	/^$(SUPPORTED_VS):$/;"	t
+$(SUPPORTED_VS_CLEAN)	dsp/all.mak	/^$(SUPPORTED_VS_CLEAN):$/;"	t
+$(VERBOSE).SILENT	build/Makefile	/^$(VERBOSE).SILENT:$/;"	t
+$(VERBOSE)MAKESILENT	build/Makefile	/^$(VERBOSE)MAKESILENT = -s$/;"	m
+%	build/Makefile	/^% : %,v$/;"	t
+%	build/Makefile	/^% : RCS\/%$/;"	t
+%	build/Makefile	/^% : RCS\/%,v$/;"	t
+%	build/Makefile	/^% : SCCS\/s.%$/;"	t
+%	build/Makefile	/^% : s.%$/;"	t
+0	dsp/CMakePresets.json	/^    "$penv{PRESET_FILE}"$/;"	s	array:include
+1. 下载并配置 Android SDK Command Line Tools	Lab4.md	/^#### 1. 下载并配置 Android SDK Command Line Tools$/;"	t	subsection:Lab4: Hexagon NPU GEMM""环境准备""Android NDK 安装
+1. 修改必要的依赖库	Lab4.md	/^#### 1. 修改必要的依赖库$/;"	t	subsection:Lab4: Hexagon NPU GEMM""代码编译与运行""模拟器运行 (备选)
+1. 申请 QDC 设备	Lab4.md	/^#### 1. 申请 QDC 设备$/;"	t	subsection:Lab4: Hexagon NPU GEMM""代码编译与运行""实体设备运行 (推荐)
+2. 安装 NDK	Lab4.md	/^#### 2. 安装 NDK$/;"	t	subsection:Lab4: Hexagon NPU GEMM""环境准备""Android NDK 安装
+2. 建立设备连接	Lab4.md	/^#### 2. 建立设备连接$/;"	t	subsection:Lab4: Hexagon NPU GEMM""代码编译与运行""实体设备运行 (推荐)
+2. 运行 Hexagon 模拟器	Lab4.md	/^#### 2. 运行 Hexagon 模拟器$/;"	t	subsection:Lab4: Hexagon NPU GEMM""代码编译与运行""模拟器运行 (备选)
+3. 编译 Android 测试工具	Lab4.md	/^#### 3. 编译 Android 测试工具$/;"	t	subsection:Lab4: Hexagon NPU GEMM""代码编译与运行""实体设备运行 (推荐)
+4. 部署并运行测试	Lab4.md	/^#### 4. 部署并运行测试$/;"	t	subsection:Lab4: Hexagon NPU GEMM""代码编译与运行""实体设备运行 (推荐)
+ARCHITECTURE_ID	build/CMakeFiles/3.22.1/CompilerIdC/CMakeCCompilerId.c	/^#   define ARCHITECTURE_ID /;"	d	file:
+ARCHITECTURE_ID	build/CMakeFiles/3.22.1/CompilerIdC/CMakeCCompilerId.c	/^#  define ARCHITECTURE_ID /;"	d	file:
+ARCHITECTURE_ID	build/CMakeFiles/3.22.1/CompilerIdC/CMakeCCompilerId.c	/^#  define ARCHITECTURE_ID$/;"	d	file:
+ARCHITECTURE_ID	build/CMakeFiles/3.22.1/CompilerIdCXX/CMakeCXXCompilerId.cpp	/^#   define ARCHITECTURE_ID /;"	d	file:
+ARCHITECTURE_ID	build/CMakeFiles/3.22.1/CompilerIdCXX/CMakeCXXCompilerId.cpp	/^#  define ARCHITECTURE_ID /;"	d	file:
+ARCHITECTURE_ID	build/CMakeFiles/3.22.1/CompilerIdCXX/CMakeCXXCompilerId.cpp	/^#  define ARCHITECTURE_ID$/;"	d	file:
+Android NDK 安装	Lab4.md	/^### Android NDK 安装$/;"	S	section:Lab4: Hexagon NPU GEMM""环境准备
+CALCULATOR_H	calculator-api.h	/^#define CALCULATOR_H$/;"	d
+CDSRPC_LIB_PATH	CMakeLists.txt	/^set(CDSRPC_LIB_PATH "${HEXAGON_SDK_ROOT}\/ipc\/fastrpc\/remote\/ship\/android_aarch64\/libcdsprp/;"	v
+CMAKE_AR	build/CMakeFiles/3.22.1/CMakeCCompiler.cmake	/^set(CMAKE_AR "\/home\/zzzz\/Android\/Sdk\/ndk\/29.0.13113456\/toolchains\/llvm\/prebuilt\/linux-/;"	v
+CMAKE_AR	build/CMakeFiles/3.22.1/CMakeCXXCompiler.cmake	/^set(CMAKE_AR "\/home\/zzzz\/Android\/Sdk\/ndk\/29.0.13113456\/toolchains\/llvm\/prebuilt\/linux-/;"	v
+CMAKE_BINARY_DIR	build/Makefile	/^CMAKE_BINARY_DIR = \/home\/zzzz\/OS-2026\/Lab4\/build$/;"	m
+CMAKE_C11_COMPILE_FEATURES	build/CMakeFiles/3.22.1/CMakeCCompiler.cmake	/^set(CMAKE_C11_COMPILE_FEATURES "c_std_11;c_static_assert")$/;"	v
+CMAKE_C17_COMPILE_FEATURES	build/CMakeFiles/3.22.1/CMakeCCompiler.cmake	/^set(CMAKE_C17_COMPILE_FEATURES "c_std_17")$/;"	v
+CMAKE_C23_COMPILE_FEATURES	build/CMakeFiles/3.22.1/CMakeCCompiler.cmake	/^set(CMAKE_C23_COMPILE_FEATURES "c_std_23")$/;"	v
+CMAKE_C90_COMPILE_FEATURES	build/CMakeFiles/3.22.1/CMakeCCompiler.cmake	/^set(CMAKE_C90_COMPILE_FEATURES "c_std_90;c_function_prototypes")$/;"	v
+CMAKE_C99_COMPILE_FEATURES	build/CMakeFiles/3.22.1/CMakeCCompiler.cmake	/^set(CMAKE_C99_COMPILE_FEATURES "c_std_99;c_restrict;c_variadic_macros")$/;"	v
+CMAKE_CL_SHOWINCLUDES_PREFIX	build/CMakeFiles/3.22.1/CMakeCCompiler.cmake	/^  set(CMAKE_CL_SHOWINCLUDES_PREFIX "${CMAKE_C_CL_SHOWINCLUDES_PREFIX}")$/;"	v
+CMAKE_CL_SHOWINCLUDES_PREFIX	build/CMakeFiles/3.22.1/CMakeCXXCompiler.cmake	/^  set(CMAKE_CL_SHOWINCLUDES_PREFIX "${CMAKE_CXX_CL_SHOWINCLUDES_PREFIX}")$/;"	v
+CMAKE_COMMAND	build/Makefile	/^CMAKE_COMMAND = \/usr\/bin\/cmake$/;"	m
+CMAKE_COMPILER_IS_GNUCC	build/CMakeFiles/3.22.1/CMakeCCompiler.cmake	/^set(CMAKE_COMPILER_IS_GNUCC )$/;"	v
+CMAKE_COMPILER_IS_GNUCXX	build/CMakeFiles/3.22.1/CMakeCXXCompiler.cmake	/^set(CMAKE_COMPILER_IS_GNUCXX )$/;"	v
+CMAKE_CROSSCOMPILING	build/CMakeFiles/3.22.1/CMakeSystem.cmake	/^set(CMAKE_CROSSCOMPILING "TRUE")$/;"	v
+CMAKE_CROSSCOMPILING	build/cmake_install.cmake	/^  set(CMAKE_CROSSCOMPILING "TRUE")$/;"	v
+CMAKE_CXX11_COMPILE_FEATURES	build/CMakeFiles/3.22.1/CMakeCXXCompiler.cmake	/^set(CMAKE_CXX11_COMPILE_FEATURES "cxx_std_11;cxx_alias_templates;cxx_alignas;cxx_alignof;cxx_att/;"	v
+CMAKE_CXX14_COMPILE_FEATURES	build/CMakeFiles/3.22.1/CMakeCXXCompiler.cmake	/^set(CMAKE_CXX14_COMPILE_FEATURES "cxx_std_14;cxx_aggregate_default_initializers;cxx_attribute_de/;"	v
+CMAKE_CXX17_COMPILE_FEATURES	build/CMakeFiles/3.22.1/CMakeCXXCompiler.cmake	/^set(CMAKE_CXX17_COMPILE_FEATURES "cxx_std_17")$/;"	v
+CMAKE_CXX20_COMPILE_FEATURES	build/CMakeFiles/3.22.1/CMakeCXXCompiler.cmake	/^set(CMAKE_CXX20_COMPILE_FEATURES "cxx_std_20")$/;"	v
+CMAKE_CXX23_COMPILE_FEATURES	build/CMakeFiles/3.22.1/CMakeCXXCompiler.cmake	/^set(CMAKE_CXX23_COMPILE_FEATURES "cxx_std_23")$/;"	v
+CMAKE_CXX98_COMPILE_FEATURES	build/CMakeFiles/3.22.1/CMakeCXXCompiler.cmake	/^set(CMAKE_CXX98_COMPILE_FEATURES "cxx_std_98;cxx_template_template_parameters")$/;"	v
+CMAKE_CXX_ABI_COMPILED	build/CMakeFiles/3.22.1/CMakeCXXCompiler.cmake	/^set(CMAKE_CXX_ABI_COMPILED TRUE)$/;"	v
+CMAKE_CXX_BYTE_ORDER	build/CMakeFiles/3.22.1/CMakeCXXCompiler.cmake	/^set(CMAKE_CXX_BYTE_ORDER "LITTLE_ENDIAN")$/;"	v
+CMAKE_CXX_CL_SHOWINCLUDES_PREFIX	build/CMakeFiles/3.22.1/CMakeCXXCompiler.cmake	/^set(CMAKE_CXX_CL_SHOWINCLUDES_PREFIX "")$/;"	v
+CMAKE_CXX_COMPILER	build/CMakeFiles/3.22.1/CMakeCXXCompiler.cmake	/^set(CMAKE_CXX_COMPILER "\/home\/zzzz\/Android\/Sdk\/ndk\/29.0.13113456\/toolchains\/llvm\/prebui/;"	v
+CMAKE_CXX_COMPILER_ABI	build/CMakeFiles/3.22.1/CMakeCXXCompiler.cmake	/^set(CMAKE_CXX_COMPILER_ABI "ELF")$/;"	v
+CMAKE_CXX_COMPILER_AR	build/CMakeFiles/3.22.1/CMakeCXXCompiler.cmake	/^set(CMAKE_CXX_COMPILER_AR "\/home\/zzzz\/Android\/Sdk\/ndk\/29.0.13113456\/toolchains\/llvm\/pre/;"	v
+CMAKE_CXX_COMPILER_ARG1	build/CMakeFiles/3.22.1/CMakeCXXCompiler.cmake	/^set(CMAKE_CXX_COMPILER_ARG1 "")$/;"	v
+CMAKE_CXX_COMPILER_ENV_VAR	build/CMakeFiles/3.22.1/CMakeCXXCompiler.cmake	/^set(CMAKE_CXX_COMPILER_ENV_VAR "CXX")$/;"	v
+CMAKE_CXX_COMPILER_FRONTEND_VARIANT	build/CMakeFiles/3.22.1/CMakeCXXCompiler.cmake	/^set(CMAKE_CXX_COMPILER_FRONTEND_VARIANT "GNU")$/;"	v
+CMAKE_CXX_COMPILER_ID	build/CMakeFiles/3.22.1/CMakeCXXCompiler.cmake	/^set(CMAKE_CXX_COMPILER_ID "Clang")$/;"	v
+CMAKE_CXX_COMPILER_ID_RUN	build/CMakeFiles/3.22.1/CMakeCXXCompiler.cmake	/^set(CMAKE_CXX_COMPILER_ID_RUN 1)$/;"	v
+CMAKE_CXX_COMPILER_LOADED	build/CMakeFiles/3.22.1/CMakeCXXCompiler.cmake	/^set(CMAKE_CXX_COMPILER_LOADED 1)$/;"	v
+CMAKE_CXX_COMPILER_RANLIB	build/CMakeFiles/3.22.1/CMakeCXXCompiler.cmake	/^set(CMAKE_CXX_COMPILER_RANLIB "\/home\/zzzz\/Android\/Sdk\/ndk\/29.0.13113456\/toolchains\/llvm\//;"	v
+CMAKE_CXX_COMPILER_VERSION	build/CMakeFiles/3.22.1/CMakeCXXCompiler.cmake	/^set(CMAKE_CXX_COMPILER_VERSION "20.0.0")$/;"	v
+CMAKE_CXX_COMPILER_VERSION_INTERNAL	build/CMakeFiles/3.22.1/CMakeCXXCompiler.cmake	/^set(CMAKE_CXX_COMPILER_VERSION_INTERNAL "")$/;"	v
+CMAKE_CXX_COMPILER_WORKS	build/CMakeFiles/3.22.1/CMakeCXXCompiler.cmake	/^set(CMAKE_CXX_COMPILER_WORKS TRUE)$/;"	v
+CMAKE_CXX_COMPILER_WRAPPER	build/CMakeFiles/3.22.1/CMakeCXXCompiler.cmake	/^set(CMAKE_CXX_COMPILER_WRAPPER "")$/;"	v
+CMAKE_CXX_COMPILE_FEATURES	build/CMakeFiles/3.22.1/CMakeCXXCompiler.cmake	/^set(CMAKE_CXX_COMPILE_FEATURES "cxx_std_98;cxx_template_template_parameters;cxx_std_11;cxx_alias/;"	v
+CMAKE_CXX_EXTENSIONS_COMPUTED_DEFAULT	build/CMakeFiles/3.22.1/CMakeCXXCompiler.cmake	/^set(CMAKE_CXX_EXTENSIONS_COMPUTED_DEFAULT "ON")$/;"	v
+CMAKE_CXX_IGNORE_EXTENSIONS	build/CMakeFiles/3.22.1/CMakeCXXCompiler.cmake	/^set(CMAKE_CXX_IGNORE_EXTENSIONS inl;h;hpp;HPP;H;o;O;obj;OBJ;def;DEF;rc;RC)$/;"	v
+CMAKE_CXX_IMPLICIT_INCLUDE_DIRECTORIES	build/CMakeFiles/3.22.1/CMakeCXXCompiler.cmake	/^set(CMAKE_CXX_IMPLICIT_INCLUDE_DIRECTORIES "\/home\/zzzz\/Android\/Sdk\/ndk\/29.0.13113456\/tool/;"	v
+CMAKE_CXX_IMPLICIT_LINK_DIRECTORIES	build/CMakeFiles/3.22.1/CMakeCXXCompiler.cmake	/^set(CMAKE_CXX_IMPLICIT_LINK_DIRECTORIES "\/home\/zzzz\/Android\/Sdk\/ndk\/29.0.13113456\/toolcha/;"	v
+CMAKE_CXX_IMPLICIT_LINK_FRAMEWORK_DIRECTORIES	build/CMakeFiles/3.22.1/CMakeCXXCompiler.cmake	/^set(CMAKE_CXX_IMPLICIT_LINK_FRAMEWORK_DIRECTORIES "")$/;"	v
+CMAKE_CXX_IMPLICIT_LINK_LIBRARIES	build/CMakeFiles/3.22.1/CMakeCXXCompiler.cmake	/^set(CMAKE_CXX_IMPLICIT_LINK_LIBRARIES "c++;m;-l:libunwind.a;dl;c;-l:libunwind.a;dl")$/;"	v
+CMAKE_CXX_INCLUDE_REGEX_COMPLAIN	build/CMakeFiles/CMakeDirectoryInformation.cmake	/^set(CMAKE_CXX_INCLUDE_REGEX_COMPLAIN ${CMAKE_C_INCLUDE_REGEX_COMPLAIN})$/;"	v
+CMAKE_CXX_INCLUDE_REGEX_SCAN	build/CMakeFiles/CMakeDirectoryInformation.cmake	/^set(CMAKE_CXX_INCLUDE_REGEX_SCAN ${CMAKE_C_INCLUDE_REGEX_SCAN})$/;"	v
+CMAKE_CXX_LIBRARY_ARCHITECTURE	build/CMakeFiles/3.22.1/CMakeCXXCompiler.cmake	/^set(CMAKE_CXX_LIBRARY_ARCHITECTURE "")$/;"	v
+CMAKE_CXX_LINKER_PREFERENCE	build/CMakeFiles/3.22.1/CMakeCXXCompiler.cmake	/^set(CMAKE_CXX_LINKER_PREFERENCE 30)$/;"	v
+CMAKE_CXX_LINKER_PREFERENCE_PROPAGATES	build/CMakeFiles/3.22.1/CMakeCXXCompiler.cmake	/^set(CMAKE_CXX_LINKER_PREFERENCE_PROPAGATES 1)$/;"	v
+CMAKE_CXX_PLATFORM_ID	build/CMakeFiles/3.22.1/CMakeCXXCompiler.cmake	/^set(CMAKE_CXX_PLATFORM_ID "Linux")$/;"	v
+CMAKE_CXX_SIMULATE_ID	build/CMakeFiles/3.22.1/CMakeCXXCompiler.cmake	/^set(CMAKE_CXX_SIMULATE_ID "")$/;"	v
+CMAKE_CXX_SIMULATE_VERSION	build/CMakeFiles/3.22.1/CMakeCXXCompiler.cmake	/^set(CMAKE_CXX_SIMULATE_VERSION "")$/;"	v
+CMAKE_CXX_SIZEOF_DATA_PTR	build/CMakeFiles/3.22.1/CMakeCXXCompiler.cmake	/^set(CMAKE_CXX_SIZEOF_DATA_PTR "8")$/;"	v
+CMAKE_CXX_SOURCE_FILE_EXTENSIONS	build/CMakeFiles/3.22.1/CMakeCXXCompiler.cmake	/^set(CMAKE_CXX_SOURCE_FILE_EXTENSIONS C;M;c++;cc;cpp;cxx;m;mm;mpp;CPP;ixx;cppm)$/;"	v
+CMAKE_CXX_STANDARD_COMPUTED_DEFAULT	build/CMakeFiles/3.22.1/CMakeCXXCompiler.cmake	/^set(CMAKE_CXX_STANDARD_COMPUTED_DEFAULT "17")$/;"	v
+CMAKE_C_ABI_COMPILED	build/CMakeFiles/3.22.1/CMakeCCompiler.cmake	/^set(CMAKE_C_ABI_COMPILED TRUE)$/;"	v
+CMAKE_C_BYTE_ORDER	build/CMakeFiles/3.22.1/CMakeCCompiler.cmake	/^set(CMAKE_C_BYTE_ORDER "LITTLE_ENDIAN")$/;"	v
+CMAKE_C_CL_SHOWINCLUDES_PREFIX	build/CMakeFiles/3.22.1/CMakeCCompiler.cmake	/^set(CMAKE_C_CL_SHOWINCLUDES_PREFIX "")$/;"	v
+CMAKE_C_COMPILER	build/CMakeFiles/3.22.1/CMakeCCompiler.cmake	/^set(CMAKE_C_COMPILER "\/home\/zzzz\/Android\/Sdk\/ndk\/29.0.13113456\/toolchains\/llvm\/prebuilt/;"	v
+CMAKE_C_COMPILER_ABI	build/CMakeFiles/3.22.1/CMakeCCompiler.cmake	/^set(CMAKE_C_COMPILER_ABI "ELF")$/;"	v
+CMAKE_C_COMPILER_AR	build/CMakeFiles/3.22.1/CMakeCCompiler.cmake	/^set(CMAKE_C_COMPILER_AR "\/home\/zzzz\/Android\/Sdk\/ndk\/29.0.13113456\/toolchains\/llvm\/prebu/;"	v
+CMAKE_C_COMPILER_ARG1	build/CMakeFiles/3.22.1/CMakeCCompiler.cmake	/^set(CMAKE_C_COMPILER_ARG1 "")$/;"	v
+CMAKE_C_COMPILER_ENV_VAR	build/CMakeFiles/3.22.1/CMakeCCompiler.cmake	/^set(CMAKE_C_COMPILER_ENV_VAR "CC")$/;"	v
+CMAKE_C_COMPILER_FRONTEND_VARIANT	build/CMakeFiles/3.22.1/CMakeCCompiler.cmake	/^set(CMAKE_C_COMPILER_FRONTEND_VARIANT "GNU")$/;"	v
+CMAKE_C_COMPILER_ID	build/CMakeFiles/3.22.1/CMakeCCompiler.cmake	/^set(CMAKE_C_COMPILER_ID "Clang")$/;"	v
+CMAKE_C_COMPILER_ID_RUN	build/CMakeFiles/3.22.1/CMakeCCompiler.cmake	/^set(CMAKE_C_COMPILER_ID_RUN 1)$/;"	v
+CMAKE_C_COMPILER_LOADED	build/CMakeFiles/3.22.1/CMakeCCompiler.cmake	/^set(CMAKE_C_COMPILER_LOADED 1)$/;"	v
+CMAKE_C_COMPILER_RANLIB	build/CMakeFiles/3.22.1/CMakeCCompiler.cmake	/^set(CMAKE_C_COMPILER_RANLIB "\/home\/zzzz\/Android\/Sdk\/ndk\/29.0.13113456\/toolchains\/llvm\/p/;"	v
+CMAKE_C_COMPILER_VERSION	build/CMakeFiles/3.22.1/CMakeCCompiler.cmake	/^set(CMAKE_C_COMPILER_VERSION "20.0.0")$/;"	v
+CMAKE_C_COMPILER_VERSION_INTERNAL	build/CMakeFiles/3.22.1/CMakeCCompiler.cmake	/^set(CMAKE_C_COMPILER_VERSION_INTERNAL "")$/;"	v
+CMAKE_C_COMPILER_WORKS	build/CMakeFiles/3.22.1/CMakeCCompiler.cmake	/^set(CMAKE_C_COMPILER_WORKS TRUE)$/;"	v
+CMAKE_C_COMPILER_WRAPPER	build/CMakeFiles/3.22.1/CMakeCCompiler.cmake	/^set(CMAKE_C_COMPILER_WRAPPER "")$/;"	v
+CMAKE_C_COMPILE_FEATURES	build/CMakeFiles/3.22.1/CMakeCCompiler.cmake	/^set(CMAKE_C_COMPILE_FEATURES "c_std_90;c_function_prototypes;c_std_99;c_restrict;c_variadic_macr/;"	v
+CMAKE_C_EXTENSIONS_COMPUTED_DEFAULT	build/CMakeFiles/3.22.1/CMakeCCompiler.cmake	/^set(CMAKE_C_EXTENSIONS_COMPUTED_DEFAULT "ON")$/;"	v
+CMAKE_C_IGNORE_EXTENSIONS	build/CMakeFiles/3.22.1/CMakeCCompiler.cmake	/^set(CMAKE_C_IGNORE_EXTENSIONS h;H;o;O;obj;OBJ;def;DEF;rc;RC)$/;"	v
+CMAKE_C_IMPLICIT_INCLUDE_DIRECTORIES	build/CMakeFiles/3.22.1/CMakeCCompiler.cmake	/^set(CMAKE_C_IMPLICIT_INCLUDE_DIRECTORIES "\/home\/zzzz\/Android\/Sdk\/ndk\/29.0.13113456\/toolch/;"	v
+CMAKE_C_IMPLICIT_LINK_DIRECTORIES	build/CMakeFiles/3.22.1/CMakeCCompiler.cmake	/^set(CMAKE_C_IMPLICIT_LINK_DIRECTORIES "\/home\/zzzz\/Android\/Sdk\/ndk\/29.0.13113456\/toolchain/;"	v
+CMAKE_C_IMPLICIT_LINK_FRAMEWORK_DIRECTORIES	build/CMakeFiles/3.22.1/CMakeCCompiler.cmake	/^set(CMAKE_C_IMPLICIT_LINK_FRAMEWORK_DIRECTORIES "")$/;"	v
+CMAKE_C_IMPLICIT_LINK_LIBRARIES	build/CMakeFiles/3.22.1/CMakeCCompiler.cmake	/^set(CMAKE_C_IMPLICIT_LINK_LIBRARIES "-l:libunwind.a;dl;c;-l:libunwind.a;dl")$/;"	v
+CMAKE_C_INCLUDE_REGEX_COMPLAIN	build/CMakeFiles/CMakeDirectoryInformation.cmake	/^set(CMAKE_C_INCLUDE_REGEX_COMPLAIN "^$")$/;"	v
+CMAKE_C_INCLUDE_REGEX_SCAN	build/CMakeFiles/CMakeDirectoryInformation.cmake	/^set(CMAKE_C_INCLUDE_REGEX_SCAN "^.*$")$/;"	v
+CMAKE_C_LIBRARY_ARCHITECTURE	build/CMakeFiles/3.22.1/CMakeCCompiler.cmake	/^set(CMAKE_C_LIBRARY_ARCHITECTURE "")$/;"	v
+CMAKE_C_LINKER_PREFERENCE	build/CMakeFiles/3.22.1/CMakeCCompiler.cmake	/^set(CMAKE_C_LINKER_PREFERENCE 10)$/;"	v
+CMAKE_C_PLATFORM_ID	build/CMakeFiles/3.22.1/CMakeCCompiler.cmake	/^set(CMAKE_C_PLATFORM_ID "Linux")$/;"	v
+CMAKE_C_SIMULATE_ID	build/CMakeFiles/3.22.1/CMakeCCompiler.cmake	/^set(CMAKE_C_SIMULATE_ID "")$/;"	v
+CMAKE_C_SIMULATE_VERSION	build/CMakeFiles/3.22.1/CMakeCCompiler.cmake	/^set(CMAKE_C_SIMULATE_VERSION "")$/;"	v
+CMAKE_C_SIZEOF_DATA_PTR	build/CMakeFiles/3.22.1/CMakeCCompiler.cmake	/^set(CMAKE_C_SIZEOF_DATA_PTR "8")$/;"	v
+CMAKE_C_SOURCE_FILE_EXTENSIONS	build/CMakeFiles/3.22.1/CMakeCCompiler.cmake	/^set(CMAKE_C_SOURCE_FILE_EXTENSIONS c;m)$/;"	v
+CMAKE_C_STANDARD_COMPUTED_DEFAULT	build/CMakeFiles/3.22.1/CMakeCCompiler.cmake	/^set(CMAKE_C_STANDARD_COMPUTED_DEFAULT "17")$/;"	v
+CMAKE_DEPENDS_DEPENDENCY_FILES	build/CMakeFiles/npu_gemm_test.dir/DependInfo.cmake	/^set(CMAKE_DEPENDS_DEPENDENCY_FILES$/;"	v
+CMAKE_DEPENDS_GENERATOR	build/CMakeFiles/Makefile.cmake	/^set(CMAKE_DEPENDS_GENERATOR "Unix Makefiles")$/;"	v
+CMAKE_DEPENDS_IN_PROJECT_ONLY	build/CMakeFiles/npu_gemm_test.dir/DependInfo.cmake	/^set(CMAKE_DEPENDS_IN_PROJECT_ONLY OFF)$/;"	v
+CMAKE_DEPENDS_LANGUAGES	build/CMakeFiles/npu_gemm_test.dir/DependInfo.cmake	/^set(CMAKE_DEPENDS_LANGUAGES$/;"	v
+CMAKE_DEPEND_INFO_FILES	build/CMakeFiles/Makefile.cmake	/^set(CMAKE_DEPEND_INFO_FILES$/;"	v
+CMAKE_FORCE_UNIX_PATHS	build/CMakeFiles/CMakeDirectoryInformation.cmake	/^set(CMAKE_FORCE_UNIX_PATHS 1)$/;"	v
+CMAKE_Fortran_TARGET_MODULE_DIR	build/CMakeFiles/npu_gemm_test.dir/DependInfo.cmake	/^set(CMAKE_Fortran_TARGET_MODULE_DIR "")$/;"	v
+CMAKE_HOST_SYSTEM	build/CMakeFiles/3.22.1/CMakeSystem.cmake	/^set(CMAKE_HOST_SYSTEM "Linux-6.8.0-84-generic")$/;"	v
+CMAKE_HOST_SYSTEM_NAME	build/CMakeFiles/3.22.1/CMakeSystem.cmake	/^set(CMAKE_HOST_SYSTEM_NAME "Linux")$/;"	v
+CMAKE_HOST_SYSTEM_PROCESSOR	build/CMakeFiles/3.22.1/CMakeSystem.cmake	/^set(CMAKE_HOST_SYSTEM_PROCESSOR "x86_64")$/;"	v
+CMAKE_HOST_SYSTEM_VERSION	build/CMakeFiles/3.22.1/CMakeSystem.cmake	/^set(CMAKE_HOST_SYSTEM_VERSION "6.8.0-84-generic")$/;"	v
+CMAKE_INSTALL_COMPONENT	build/cmake_install.cmake	/^    set(CMAKE_INSTALL_COMPONENT "${COMPONENT}")$/;"	v
+CMAKE_INSTALL_COMPONENT	build/cmake_install.cmake	/^    set(CMAKE_INSTALL_COMPONENT)$/;"	v
+CMAKE_INSTALL_CONFIG_NAME	build/cmake_install.cmake	/^    set(CMAKE_INSTALL_CONFIG_NAME "")$/;"	v
+CMAKE_INSTALL_MANIFEST	build/cmake_install.cmake	/^  set(CMAKE_INSTALL_MANIFEST "install_manifest.txt")$/;"	v
+CMAKE_INSTALL_MANIFEST	build/cmake_install.cmake	/^  set(CMAKE_INSTALL_MANIFEST "install_manifest_${CMAKE_INSTALL_COMPONENT}.txt")$/;"	v
+CMAKE_INSTALL_PREFIX	build/cmake_install.cmake	/^  set(CMAKE_INSTALL_PREFIX "\/usr\/local")$/;"	v
+CMAKE_INSTALL_SO_NO_EXE	build/cmake_install.cmake	/^  set(CMAKE_INSTALL_SO_NO_EXE "1")$/;"	v
+CMAKE_INTERNAL_PLATFORM_ABI	build/CMakeFiles/3.22.1/CMakeCCompiler.cmake	/^  set(CMAKE_INTERNAL_PLATFORM_ABI "${CMAKE_C_COMPILER_ABI}")$/;"	v
+CMAKE_INTERNAL_PLATFORM_ABI	build/CMakeFiles/3.22.1/CMakeCXXCompiler.cmake	/^  set(CMAKE_INTERNAL_PLATFORM_ABI "${CMAKE_CXX_COMPILER_ABI}")$/;"	v
+CMAKE_LIBRARY_ARCHITECTURE	build/CMakeFiles/3.22.1/CMakeCCompiler.cmake	/^  set(CMAKE_LIBRARY_ARCHITECTURE "")$/;"	v
+CMAKE_LIBRARY_ARCHITECTURE	build/CMakeFiles/3.22.1/CMakeCXXCompiler.cmake	/^  set(CMAKE_LIBRARY_ARCHITECTURE "")$/;"	v
+CMAKE_LINKER	build/CMakeFiles/3.22.1/CMakeCCompiler.cmake	/^set(CMAKE_LINKER "\/home\/zzzz\/Android\/Sdk\/ndk\/29.0.13113456\/toolchains\/llvm\/prebuilt\/li/;"	v
+CMAKE_LINKER	build/CMakeFiles/3.22.1/CMakeCXXCompiler.cmake	/^set(CMAKE_LINKER "\/home\/zzzz\/Android\/Sdk\/ndk\/29.0.13113456\/toolchains\/llvm\/prebuilt\/li/;"	v
+CMAKE_MAKEFILE_DEPENDS	build/CMakeFiles/Makefile.cmake	/^set(CMAKE_MAKEFILE_DEPENDS$/;"	v
+CMAKE_MAKEFILE_OUTPUTS	build/CMakeFiles/Makefile.cmake	/^set(CMAKE_MAKEFILE_OUTPUTS$/;"	v
+CMAKE_MAKEFILE_PRODUCTS	build/CMakeFiles/Makefile.cmake	/^set(CMAKE_MAKEFILE_PRODUCTS$/;"	v
+CMAKE_MT	build/CMakeFiles/3.22.1/CMakeCCompiler.cmake	/^set(CMAKE_MT "")$/;"	v
+CMAKE_MT	build/CMakeFiles/3.22.1/CMakeCXXCompiler.cmake	/^set(CMAKE_MT "")$/;"	v
+CMAKE_OBJDUMP	build/cmake_install.cmake	/^  set(CMAKE_OBJDUMP "\/home\/zzzz\/Android\/Sdk\/ndk\/29.0.13113456\/toolchains\/llvm\/prebuilt\//;"	v
+CMAKE_RANLIB	build/CMakeFiles/3.22.1/CMakeCCompiler.cmake	/^set(CMAKE_RANLIB "\/home\/zzzz\/Android\/Sdk\/ndk\/29.0.13113456\/toolchains\/llvm\/prebuilt\/li/;"	v
+CMAKE_RANLIB	build/CMakeFiles/3.22.1/CMakeCXXCompiler.cmake	/^set(CMAKE_RANLIB "\/home\/zzzz\/Android\/Sdk\/ndk\/29.0.13113456\/toolchains\/llvm\/prebuilt\/li/;"	v
+CMAKE_RELATIVE_PATH_TOP_BINARY	build/CMakeFiles/CMakeDirectoryInformation.cmake	/^set(CMAKE_RELATIVE_PATH_TOP_BINARY "\/home\/zzzz\/OS-2026\/Lab4\/build")$/;"	v
+CMAKE_RELATIVE_PATH_TOP_SOURCE	build/CMakeFiles/CMakeDirectoryInformation.cmake	/^set(CMAKE_RELATIVE_PATH_TOP_SOURCE "\/home\/zzzz\/OS-2026\/Lab4")$/;"	v
+CMAKE_SIZEOF_VOID_P	build/CMakeFiles/3.22.1/CMakeCCompiler.cmake	/^  set(CMAKE_SIZEOF_VOID_P "${CMAKE_C_SIZEOF_DATA_PTR}")$/;"	v
+CMAKE_SIZEOF_VOID_P	build/CMakeFiles/3.22.1/CMakeCXXCompiler.cmake	/^  set(CMAKE_SIZEOF_VOID_P "${CMAKE_CXX_SIZEOF_DATA_PTR}")$/;"	v
+CMAKE_SOURCE_DIR	build/Makefile	/^CMAKE_SOURCE_DIR = \/home\/zzzz\/OS-2026\/Lab4$/;"	m
+CMAKE_SYSTEM	build/CMakeFiles/3.22.1/CMakeSystem.cmake	/^set(CMAKE_SYSTEM "Android-1")$/;"	v
+CMAKE_SYSTEM_LOADED	build/CMakeFiles/3.22.1/CMakeSystem.cmake	/^set(CMAKE_SYSTEM_LOADED 1)$/;"	v
+CMAKE_SYSTEM_NAME	build/CMakeFiles/3.22.1/CMakeSystem.cmake	/^set(CMAKE_SYSTEM_NAME "Android")$/;"	v
+CMAKE_SYSTEM_PROCESSOR	build/CMakeFiles/3.22.1/CMakeSystem.cmake	/^set(CMAKE_SYSTEM_PROCESSOR "aarch64")$/;"	v
+CMAKE_SYSTEM_VERSION	build/CMakeFiles/3.22.1/CMakeSystem.cmake	/^set(CMAKE_SYSTEM_VERSION "1")$/;"	v
+CMAKE_TARGET_LINKED_INFO_FILES	build/CMakeFiles/npu_gemm_test.dir/DependInfo.cmake	/^set(CMAKE_TARGET_LINKED_INFO_FILES$/;"	v
+COMPILER_ID	build/CMakeFiles/3.22.1/CompilerIdC/CMakeCCompilerId.c	/^# define COMPILER_ID /;"	d	file:
+COMPILER_ID	build/CMakeFiles/3.22.1/CompilerIdCXX/CMakeCXXCompilerId.cpp	/^# define COMPILER_ID /;"	d	file:
+COMPILER_VERSION	build/CMakeFiles/3.22.1/CompilerIdC/CMakeCCompilerId.c	/^#   define COMPILER_VERSION /;"	d	file:
+COMPILER_VERSION	build/CMakeFiles/3.22.1/CompilerIdCXX/CMakeCXXCompilerId.cpp	/^#   define COMPILER_VERSION /;"	d	file:
+COMPILER_VERSION_INTERNAL	build/CMakeFiles/3.22.1/CompilerIdC/CMakeCCompilerId.c	/^#   define COMPILER_VERSION_INTERNAL /;"	d	file:
+COMPILER_VERSION_INTERNAL	build/CMakeFiles/3.22.1/CompilerIdC/CMakeCCompilerId.c	/^#  define COMPILER_VERSION_INTERNAL /;"	d	file:
+COMPILER_VERSION_INTERNAL	build/CMakeFiles/3.22.1/CompilerIdC/CMakeCCompilerId.c	/^# define COMPILER_VERSION_INTERNAL /;"	d	file:
+COMPILER_VERSION_INTERNAL	build/CMakeFiles/3.22.1/CompilerIdCXX/CMakeCXXCompilerId.cpp	/^#   define COMPILER_VERSION_INTERNAL /;"	d	file:
+COMPILER_VERSION_INTERNAL	build/CMakeFiles/3.22.1/CompilerIdCXX/CMakeCXXCompilerId.cpp	/^#  define COMPILER_VERSION_INTERNAL /;"	d	file:
+COMPILER_VERSION_INTERNAL	build/CMakeFiles/3.22.1/CompilerIdCXX/CMakeCXXCompilerId.cpp	/^# define COMPILER_VERSION_INTERNAL /;"	d	file:
+COMPILER_VERSION_INTERNAL_STR	build/CMakeFiles/3.22.1/CompilerIdC/CMakeCCompilerId.c	/^# define COMPILER_VERSION_INTERNAL_STR /;"	d	file:
+COMPILER_VERSION_INTERNAL_STR	build/CMakeFiles/3.22.1/CompilerIdCXX/CMakeCXXCompilerId.cpp	/^# define COMPILER_VERSION_INTERNAL_STR /;"	d	file:
+COMPILER_VERSION_MAJOR	build/CMakeFiles/3.22.1/CompilerIdC/CMakeCCompilerId.c	/^  # define COMPILER_VERSION_MAJOR /;"	d	file:
+COMPILER_VERSION_MAJOR	build/CMakeFiles/3.22.1/CompilerIdC/CMakeCCompilerId.c	/^#   define COMPILER_VERSION_MAJOR /;"	d	file:
+COMPILER_VERSION_MAJOR	build/CMakeFiles/3.22.1/CompilerIdC/CMakeCCompilerId.c	/^#  define COMPILER_VERSION_MAJOR /;"	d	file:
+COMPILER_VERSION_MAJOR	build/CMakeFiles/3.22.1/CompilerIdC/CMakeCCompilerId.c	/^# define COMPILER_VERSION_MAJOR /;"	d	file:
+COMPILER_VERSION_MAJOR	build/CMakeFiles/3.22.1/CompilerIdCXX/CMakeCXXCompilerId.cpp	/^  # define COMPILER_VERSION_MAJOR /;"	d	file:
+COMPILER_VERSION_MAJOR	build/CMakeFiles/3.22.1/CompilerIdCXX/CMakeCXXCompilerId.cpp	/^#   define COMPILER_VERSION_MAJOR /;"	d	file:
+COMPILER_VERSION_MAJOR	build/CMakeFiles/3.22.1/CompilerIdCXX/CMakeCXXCompilerId.cpp	/^#  define COMPILER_VERSION_MAJOR /;"	d	file:
+COMPILER_VERSION_MAJOR	build/CMakeFiles/3.22.1/CompilerIdCXX/CMakeCXXCompilerId.cpp	/^# define COMPILER_VERSION_MAJOR /;"	d	file:
+COMPILER_VERSION_MINOR	build/CMakeFiles/3.22.1/CompilerIdC/CMakeCCompilerId.c	/^  # define COMPILER_VERSION_MINOR /;"	d	file:
+COMPILER_VERSION_MINOR	build/CMakeFiles/3.22.1/CompilerIdC/CMakeCCompilerId.c	/^#   define COMPILER_VERSION_MINOR /;"	d	file:
+COMPILER_VERSION_MINOR	build/CMakeFiles/3.22.1/CompilerIdC/CMakeCCompilerId.c	/^#  define COMPILER_VERSION_MINOR /;"	d	file:
+COMPILER_VERSION_MINOR	build/CMakeFiles/3.22.1/CompilerIdC/CMakeCCompilerId.c	/^# define COMPILER_VERSION_MINOR /;"	d	file:
+COMPILER_VERSION_MINOR	build/CMakeFiles/3.22.1/CompilerIdCXX/CMakeCXXCompilerId.cpp	/^  # define COMPILER_VERSION_MINOR /;"	d	file:
+COMPILER_VERSION_MINOR	build/CMakeFiles/3.22.1/CompilerIdCXX/CMakeCXXCompilerId.cpp	/^#   define COMPILER_VERSION_MINOR /;"	d	file:
+COMPILER_VERSION_MINOR	build/CMakeFiles/3.22.1/CompilerIdCXX/CMakeCXXCompilerId.cpp	/^#  define COMPILER_VERSION_MINOR /;"	d	file:
+COMPILER_VERSION_MINOR	build/CMakeFiles/3.22.1/CompilerIdCXX/CMakeCXXCompilerId.cpp	/^# define COMPILER_VERSION_MINOR /;"	d	file:
+COMPILER_VERSION_PATCH	build/CMakeFiles/3.22.1/CompilerIdC/CMakeCCompilerId.c	/^  # define COMPILER_VERSION_PATCH /;"	d	file:
+COMPILER_VERSION_PATCH	build/CMakeFiles/3.22.1/CompilerIdC/CMakeCCompilerId.c	/^#   define COMPILER_VERSION_PATCH /;"	d	file:
+COMPILER_VERSION_PATCH	build/CMakeFiles/3.22.1/CompilerIdC/CMakeCCompilerId.c	/^#  define COMPILER_VERSION_PATCH /;"	d	file:
+COMPILER_VERSION_PATCH	build/CMakeFiles/3.22.1/CompilerIdC/CMakeCCompilerId.c	/^# define COMPILER_VERSION_PATCH /;"	d	file:
+COMPILER_VERSION_PATCH	build/CMakeFiles/3.22.1/CompilerIdCXX/CMakeCXXCompilerId.cpp	/^  # define COMPILER_VERSION_PATCH /;"	d	file:
+COMPILER_VERSION_PATCH	build/CMakeFiles/3.22.1/CompilerIdCXX/CMakeCXXCompilerId.cpp	/^#   define COMPILER_VERSION_PATCH /;"	d	file:
+COMPILER_VERSION_PATCH	build/CMakeFiles/3.22.1/CompilerIdCXX/CMakeCXXCompilerId.cpp	/^#  define COMPILER_VERSION_PATCH /;"	d	file:
+COMPILER_VERSION_PATCH	build/CMakeFiles/3.22.1/CompilerIdCXX/CMakeCXXCompilerId.cpp	/^# define COMPILER_VERSION_PATCH /;"	d	file:
+COMPILER_VERSION_TWEAK	build/CMakeFiles/3.22.1/CompilerIdC/CMakeCCompilerId.c	/^#  define COMPILER_VERSION_TWEAK /;"	d	file:
+COMPILER_VERSION_TWEAK	build/CMakeFiles/3.22.1/CompilerIdC/CMakeCCompilerId.c	/^# define COMPILER_VERSION_TWEAK /;"	d	file:
+COMPILER_VERSION_TWEAK	build/CMakeFiles/3.22.1/CompilerIdCXX/CMakeCXXCompilerId.cpp	/^#  define COMPILER_VERSION_TWEAK /;"	d	file:
+COMPILER_VERSION_TWEAK	build/CMakeFiles/3.22.1/CompilerIdCXX/CMakeCXXCompilerId.cpp	/^# define COMPILER_VERSION_TWEAK /;"	d	file:
+CXX_STD	build/CMakeFiles/3.22.1/CompilerIdCXX/CMakeCXXCompilerId.cpp	/^#      define CXX_STD /;"	d	file:
+CXX_STD	build/CMakeFiles/3.22.1/CompilerIdCXX/CMakeCXXCompilerId.cpp	/^#    define CXX_STD /;"	d	file:
+CXX_STD	build/CMakeFiles/3.22.1/CompilerIdCXX/CMakeCXXCompilerId.cpp	/^#  define CXX_STD /;"	d	file:
+C_VERSION	build/CMakeFiles/3.22.1/CompilerIdC/CMakeCCompilerId.c	/^#  define C_VERSION /;"	d	file:
+C_VERSION	build/CMakeFiles/3.22.1/CompilerIdC/CMakeCCompilerId.c	/^#  define C_VERSION$/;"	d	file:
+C_VERSION	build/CMakeFiles/3.22.1/CompilerIdC/CMakeCCompilerId.c	/^# define C_VERSION /;"	d	file:
+Calculator	calculator-api.h	/^    Calculator() : result(0), nErr(0) {}$/;"	f	class:Calculator
+Calculator	calculator-api.h	/^class Calculator {$/;"	c
+CaseValuePtr	dsp/hexagon_Debug_toolv88_v79/calculator_skel.c	/^typedef union CaseValuePtr CaseValuePtr;$/;"	t	typeref:union:CaseValuePtr	file:
+CaseValuePtr	dsp/hexagon_Debug_toolv88_v79/calculator_skel.c	/^union CaseValuePtr {$/;"	u	file:
+CaseValuePtr	dsp/hexagon_Debug_toolv88_v79/calculator_stub.c	/^typedef union CaseValuePtr CaseValuePtr;$/;"	t	typeref:union:CaseValuePtr	file:
+CaseValuePtr	dsp/hexagon_Debug_toolv88_v79/calculator_stub.c	/^union CaseValuePtr {$/;"	u	file:
+DEC	build/CMakeFiles/3.22.1/CompilerIdC/CMakeCCompilerId.c	/^#define DEC(/;"	d	file:
+DEC	build/CMakeFiles/3.22.1/CompilerIdCXX/CMakeCXXCompilerId.cpp	/^#define DEC(/;"	d	file:
+EQUALS	build/Makefile	/^EQUALS = =$/;"	m
+FREE	dsp/hexagon_Debug_toolv88_v79/calculator.h	/^#define FREE /;"	d
+GGML_RESTRICT	dsp/calculator_imp.c	/^#        define GGML_RESTRICT /;"	d	file:
+GGML_RESTRICT	dsp/calculator_imp.c	/^#        define GGML_RESTRICT$/;"	d	file:
+HEX	build/CMakeFiles/3.22.1/CompilerIdC/CMakeCCompilerId.c	/^#define HEX(/;"	d	file:
+HEX	build/CMakeFiles/3.22.1/CompilerIdCXX/CMakeCXXCompilerId.cpp	/^#define HEX(/;"	d	file:
+HVX 指令参考手册	Lab4.md	/^### HVX 指令参考手册$/;"	S	section:Lab4: Hexagon NPU GEMM""使用 Hexagon 指令集优化矩阵乘法
+Hexagon SDK 安装	Lab4.md	/^### Hexagon SDK 安装$/;"	S	section:Lab4: Hexagon NPU GEMM""环境准备
+ID_VOID_MAIN	build/CMakeFiles/3.22.1/CompilerIdC/CMakeCCompilerId.c	/^# define ID_VOID_MAIN$/;"	d	file:
+INHERIT_TYPE	dsp/hexagon_Debug_toolv88_v79/calculator_skel.c	/^#define INHERIT_TYPE\\/;"	d	file:
+INHERIT_TYPE	dsp/hexagon_Debug_toolv88_v79/calculator_stub.c	/^#define INHERIT_TYPE\\/;"	d	file:
+Interface	dsp/hexagon_Debug_toolv88_v79/calculator_skel.c	/^struct Interface {$/;"	s	file:
+Interface	dsp/hexagon_Debug_toolv88_v79/calculator_skel.c	/^typedef struct Interface Interface;$/;"	t	typeref:struct:Interface	file:
+Interface	dsp/hexagon_Debug_toolv88_v79/calculator_stub.c	/^struct Interface {$/;"	s	file:
+Interface	dsp/hexagon_Debug_toolv88_v79/calculator_stub.c	/^typedef struct Interface Interface;$/;"	t	typeref:struct:Interface	file:
+Lab4: Hexagon NPU GEMM	Lab4.md	/^# Lab4: Hexagon NPU GEMM$/;"	c
+MALLOC	dsp/hexagon_Debug_toolv88_v79/calculator.h	/^#define MALLOC /;"	d
+Method	dsp/hexagon_Debug_toolv88_v79/calculator_skel.c	/^struct Method {$/;"	s	file:
+Method	dsp/hexagon_Debug_toolv88_v79/calculator_skel.c	/^typedef struct Method Method;$/;"	t	typeref:struct:Method	file:
+Method	dsp/hexagon_Debug_toolv88_v79/calculator_stub.c	/^struct Method {$/;"	s	file:
+Method	dsp/hexagon_Debug_toolv88_v79/calculator_stub.c	/^typedef struct Method Method;$/;"	t	typeref:struct:Method	file:
+PARAMETER_IN	dsp/hexagon_Debug_toolv88_v79/calculator_skel.c	/^#define PARAMETER_IN /;"	d	file:
+PARAMETER_IN	dsp/hexagon_Debug_toolv88_v79/calculator_stub.c	/^#define PARAMETER_IN /;"	d	file:
+PARAMETER_INOUT	dsp/hexagon_Debug_toolv88_v79/calculator_skel.c	/^#define PARAMETER_INOUT /;"	d	file:
+PARAMETER_INOUT	dsp/hexagon_Debug_toolv88_v79/calculator_stub.c	/^#define PARAMETER_INOUT /;"	d	file:
+PARAMETER_INROUT	dsp/hexagon_Debug_toolv88_v79/calculator_skel.c	/^#define PARAMETER_INROUT /;"	d	file:
+PARAMETER_INROUT	dsp/hexagon_Debug_toolv88_v79/calculator_stub.c	/^#define PARAMETER_INROUT /;"	d	file:
+PARAMETER_OUT	dsp/hexagon_Debug_toolv88_v79/calculator_skel.c	/^#define PARAMETER_OUT /;"	d	file:
+PARAMETER_OUT	dsp/hexagon_Debug_toolv88_v79/calculator_stub.c	/^#define PARAMETER_OUT /;"	d	file:
+PARAMETER_ROUT	dsp/hexagon_Debug_toolv88_v79/calculator_skel.c	/^#define PARAMETER_ROUT /;"	d	file:
+PARAMETER_ROUT	dsp/hexagon_Debug_toolv88_v79/calculator_stub.c	/^#define PARAMETER_ROUT /;"	d	file:
+PLATFORM_ID	build/CMakeFiles/3.22.1/CompilerIdC/CMakeCCompilerId.c	/^#  define PLATFORM_ID /;"	d	file:
+PLATFORM_ID	build/CMakeFiles/3.22.1/CompilerIdC/CMakeCCompilerId.c	/^#  define PLATFORM_ID$/;"	d	file:
+PLATFORM_ID	build/CMakeFiles/3.22.1/CompilerIdC/CMakeCCompilerId.c	/^# define PLATFORM_ID /;"	d	file:
+PLATFORM_ID	build/CMakeFiles/3.22.1/CompilerIdC/CMakeCCompilerId.c	/^# define PLATFORM_ID$/;"	d	file:
+PLATFORM_ID	build/CMakeFiles/3.22.1/CompilerIdCXX/CMakeCXXCompilerId.cpp	/^#  define PLATFORM_ID /;"	d	file:
+PLATFORM_ID	build/CMakeFiles/3.22.1/CompilerIdCXX/CMakeCXXCompilerId.cpp	/^#  define PLATFORM_ID$/;"	d	file:
+PLATFORM_ID	build/CMakeFiles/3.22.1/CompilerIdCXX/CMakeCXXCompilerId.cpp	/^# define PLATFORM_ID /;"	d	file:
+PLATFORM_ID	build/CMakeFiles/3.22.1/CompilerIdCXX/CMakeCXXCompilerId.cpp	/^# define PLATFORM_ID$/;"	d	file:
+Parameter	dsp/hexagon_Debug_toolv88_v79/calculator_skel.c	/^struct Parameter {$/;"	s	file:
+Parameter	dsp/hexagon_Debug_toolv88_v79/calculator_skel.c	/^typedef struct Parameter Parameter;$/;"	t	typeref:struct:Parameter	file:
+Parameter	dsp/hexagon_Debug_toolv88_v79/calculator_stub.c	/^struct Parameter {$/;"	s	file:
+Parameter	dsp/hexagon_Debug_toolv88_v79/calculator_stub.c	/^typedef struct Parameter Parameter;$/;"	t	typeref:struct:Parameter	file:
+RM	build/Makefile	/^RM = \/usr\/bin\/cmake -E rm -f$/;"	m
+SHELL	build/Makefile	/^SHELL = \/bin\/sh$/;"	m
+SIMULATE_ID	build/CMakeFiles/3.22.1/CompilerIdC/CMakeCCompilerId.c	/^#  define SIMULATE_ID /;"	d	file:
+SIMULATE_ID	build/CMakeFiles/3.22.1/CompilerIdC/CMakeCCompilerId.c	/^# define SIMULATE_ID /;"	d	file:
+SIMULATE_ID	build/CMakeFiles/3.22.1/CompilerIdCXX/CMakeCXXCompilerId.cpp	/^#  define SIMULATE_ID /;"	d	file:
+SIMULATE_ID	build/CMakeFiles/3.22.1/CompilerIdCXX/CMakeCXXCompilerId.cpp	/^# define SIMULATE_ID /;"	d	file:
+SIMULATE_VERSION_MAJOR	build/CMakeFiles/3.22.1/CompilerIdC/CMakeCCompilerId.c	/^#  define SIMULATE_VERSION_MAJOR /;"	d	file:
+SIMULATE_VERSION_MAJOR	build/CMakeFiles/3.22.1/CompilerIdC/CMakeCCompilerId.c	/^# define SIMULATE_VERSION_MAJOR /;"	d	file:
+SIMULATE_VERSION_MAJOR	build/CMakeFiles/3.22.1/CompilerIdCXX/CMakeCXXCompilerId.cpp	/^#  define SIMULATE_VERSION_MAJOR /;"	d	file:
+SIMULATE_VERSION_MAJOR	build/CMakeFiles/3.22.1/CompilerIdCXX/CMakeCXXCompilerId.cpp	/^# define SIMULATE_VERSION_MAJOR /;"	d	file:
+SIMULATE_VERSION_MINOR	build/CMakeFiles/3.22.1/CompilerIdC/CMakeCCompilerId.c	/^#  define SIMULATE_VERSION_MINOR /;"	d	file:
+SIMULATE_VERSION_MINOR	build/CMakeFiles/3.22.1/CompilerIdC/CMakeCCompilerId.c	/^# define SIMULATE_VERSION_MINOR /;"	d	file:
+SIMULATE_VERSION_MINOR	build/CMakeFiles/3.22.1/CompilerIdCXX/CMakeCXXCompilerId.cpp	/^#  define SIMULATE_VERSION_MINOR /;"	d	file:
+SIMULATE_VERSION_MINOR	build/CMakeFiles/3.22.1/CompilerIdCXX/CMakeCXXCompilerId.cpp	/^# define SIMULATE_VERSION_MINOR /;"	d	file:
+SIMULATE_VERSION_PATCH	build/CMakeFiles/3.22.1/CompilerIdC/CMakeCCompilerId.c	/^#  define SIMULATE_VERSION_PATCH /;"	d	file:
+SIMULATE_VERSION_PATCH	build/CMakeFiles/3.22.1/CompilerIdC/CMakeCCompilerId.c	/^# define SIMULATE_VERSION_PATCH /;"	d	file:
+SIMULATE_VERSION_PATCH	build/CMakeFiles/3.22.1/CompilerIdCXX/CMakeCXXCompilerId.cpp	/^#  define SIMULATE_VERSION_PATCH /;"	d	file:
+SIMULATE_VERSION_PATCH	build/CMakeFiles/3.22.1/CompilerIdCXX/CMakeCXXCompilerId.cpp	/^# define SIMULATE_VERSION_PATCH /;"	d	file:
+SIMULATOR_TEST	dsp/calculator_imp.c	/^#define SIMULATOR_TEST$/;"	d	file:
+SLIM_H	dsp/hexagon_Debug_toolv88_v79/calculator_skel.c	/^#define SLIM_H$/;"	d	file:
+SLIM_H	dsp/hexagon_Debug_toolv88_v79/calculator_stub.c	/^#define SLIM_H$/;"	d	file:
+SLIM_IFPTR32	dsp/hexagon_Debug_toolv88_v79/calculator_skel.c	/^#define SLIM_IFPTR32(/;"	d	file:
+SLIM_IFPTR32	dsp/hexagon_Debug_toolv88_v79/calculator_stub.c	/^#define SLIM_IFPTR32(/;"	d	file:
+SLIM_SCALARS_IS_DYNAMIC	dsp/hexagon_Debug_toolv88_v79/calculator_skel.c	/^#define SLIM_SCALARS_IS_DYNAMIC(/;"	d	file:
+SLIM_SCALARS_IS_DYNAMIC	dsp/hexagon_Debug_toolv88_v79/calculator_stub.c	/^#define SLIM_SCALARS_IS_DYNAMIC(/;"	d	file:
+STRINGIFY	build/CMakeFiles/3.22.1/CompilerIdC/CMakeCCompilerId.c	/^#define STRINGIFY(/;"	d	file:
+STRINGIFY	build/CMakeFiles/3.22.1/CompilerIdCXX/CMakeCXXCompilerId.cpp	/^#define STRINGIFY(/;"	d	file:
+STRINGIFY_HELPER	build/CMakeFiles/3.22.1/CompilerIdC/CMakeCCompilerId.c	/^#define STRINGIFY_HELPER(/;"	d	file:
+STRINGIFY_HELPER	build/CMakeFiles/3.22.1/CompilerIdCXX/CMakeCXXCompilerId.cpp	/^#define STRINGIFY_HELPER(/;"	d	file:
+SUPPORTED_VS_CLEAN	dsp/all.mak	/^SUPPORTED_VS_CLEAN = $(foreach d,$(SUPPORTED_VS),$(d)_CLEAN)$/;"	m
+SequenceType	dsp/hexagon_Debug_toolv88_v79/calculator_skel.c	/^struct SequenceType {$/;"	s	file:
+SequenceType	dsp/hexagon_Debug_toolv88_v79/calculator_skel.c	/^typedef struct SequenceType SequenceType;$/;"	t	typeref:struct:SequenceType	file:
+SequenceType	dsp/hexagon_Debug_toolv88_v79/calculator_stub.c	/^struct SequenceType {$/;"	s	file:
+SequenceType	dsp/hexagon_Debug_toolv88_v79/calculator_stub.c	/^typedef struct SequenceType SequenceType;$/;"	t	typeref:struct:SequenceType	file:
+StructType	dsp/hexagon_Debug_toolv88_v79/calculator_skel.c	/^struct StructType {$/;"	s	file:
+StructType	dsp/hexagon_Debug_toolv88_v79/calculator_skel.c	/^typedef struct StructType StructType;$/;"	t	typeref:struct:StructType	file:
+StructType	dsp/hexagon_Debug_toolv88_v79/calculator_stub.c	/^struct StructType {$/;"	s	file:
+StructType	dsp/hexagon_Debug_toolv88_v79/calculator_stub.c	/^typedef struct StructType StructType;$/;"	t	typeref:struct:StructType	file:
+TAG	calculator-api.cpp	/^const char *TAG = "calculator";$/;"	v	typeref:typename:const char *
+THREAD_COUNT	dsp/calculator_imp.c	/^#define THREAD_COUNT /;"	d	file:
+TYPE_ARRAY	dsp/hexagon_Debug_toolv88_v79/calculator_skel.c	/^#define TYPE_ARRAY /;"	d	file:
+TYPE_ARRAY	dsp/hexagon_Debug_toolv88_v79/calculator_stub.c	/^#define TYPE_ARRAY /;"	d	file:
+TYPE_COMPLEX_ARRAY	dsp/hexagon_Debug_toolv88_v79/calculator_skel.c	/^#define TYPE_COMPLEX_ARRAY /;"	d	file:
+TYPE_COMPLEX_ARRAY	dsp/hexagon_Debug_toolv88_v79/calculator_stub.c	/^#define TYPE_COMPLEX_ARRAY /;"	d	file:
+TYPE_COMPLEX_SEQUENCE	dsp/hexagon_Debug_toolv88_v79/calculator_skel.c	/^#define TYPE_COMPLEX_SEQUENCE /;"	d	file:
+TYPE_COMPLEX_SEQUENCE	dsp/hexagon_Debug_toolv88_v79/calculator_stub.c	/^#define TYPE_COMPLEX_SEQUENCE /;"	d	file:
+TYPE_COMPLEX_STRUCTURE	dsp/hexagon_Debug_toolv88_v79/calculator_skel.c	/^#define TYPE_COMPLEX_STRUCTURE /;"	d	file:
+TYPE_COMPLEX_STRUCTURE	dsp/hexagon_Debug_toolv88_v79/calculator_stub.c	/^#define TYPE_COMPLEX_STRUCTURE /;"	d	file:
+TYPE_COMPLEX_UNION	dsp/hexagon_Debug_toolv88_v79/calculator_skel.c	/^#define TYPE_COMPLEX_UNION /;"	d	file:
+TYPE_COMPLEX_UNION	dsp/hexagon_Debug_toolv88_v79/calculator_stub.c	/^#define TYPE_COMPLEX_UNION /;"	d	file:
+TYPE_ENUM	dsp/hexagon_Debug_toolv88_v79/calculator_skel.c	/^#define TYPE_ENUM /;"	d	file:
+TYPE_ENUM	dsp/hexagon_Debug_toolv88_v79/calculator_stub.c	/^#define TYPE_ENUM /;"	d	file:
+TYPE_INTERFACE	dsp/hexagon_Debug_toolv88_v79/calculator_skel.c	/^#define TYPE_INTERFACE /;"	d	file:
+TYPE_INTERFACE	dsp/hexagon_Debug_toolv88_v79/calculator_stub.c	/^#define TYPE_INTERFACE /;"	d	file:
+TYPE_OBJECT	dsp/hexagon_Debug_toolv88_v79/calculator_skel.c	/^#define TYPE_OBJECT /;"	d	file:
+TYPE_OBJECT	dsp/hexagon_Debug_toolv88_v79/calculator_stub.c	/^#define TYPE_OBJECT /;"	d	file:
+TYPE_PRIMITIVE	dsp/hexagon_Debug_toolv88_v79/calculator_skel.c	/^#define TYPE_PRIMITIVE /;"	d	file:
+TYPE_PRIMITIVE	dsp/hexagon_Debug_toolv88_v79/calculator_stub.c	/^#define TYPE_PRIMITIVE /;"	d	file:
+TYPE_SEQUENCE	dsp/hexagon_Debug_toolv88_v79/calculator_skel.c	/^#define TYPE_SEQUENCE /;"	d	file:
+TYPE_SEQUENCE	dsp/hexagon_Debug_toolv88_v79/calculator_stub.c	/^#define TYPE_SEQUENCE /;"	d	file:
+TYPE_STRING	dsp/hexagon_Debug_toolv88_v79/calculator_skel.c	/^#define TYPE_STRING /;"	d	file:
+TYPE_STRING	dsp/hexagon_Debug_toolv88_v79/calculator_stub.c	/^#define TYPE_STRING /;"	d	file:
+TYPE_STRUCTURE	dsp/hexagon_Debug_toolv88_v79/calculator_skel.c	/^#define TYPE_STRUCTURE /;"	d	file:
+TYPE_STRUCTURE	dsp/hexagon_Debug_toolv88_v79/calculator_stub.c	/^#define TYPE_STRUCTURE /;"	d	file:
+TYPE_UNION	dsp/hexagon_Debug_toolv88_v79/calculator_skel.c	/^#define TYPE_UNION /;"	d	file:
+TYPE_UNION	dsp/hexagon_Debug_toolv88_v79/calculator_stub.c	/^#define TYPE_UNION /;"	d	file:
+TYPE_WSTRING	dsp/hexagon_Debug_toolv88_v79/calculator_skel.c	/^#define TYPE_WSTRING /;"	d	file:
+TYPE_WSTRING	dsp/hexagon_Debug_toolv88_v79/calculator_stub.c	/^#define TYPE_WSTRING /;"	d	file:
+Type	dsp/hexagon_Debug_toolv88_v79/calculator_skel.c	/^struct Type {$/;"	s	file:
+Type	dsp/hexagon_Debug_toolv88_v79/calculator_skel.c	/^typedef struct Type Type;$/;"	t	typeref:struct:Type	file:
+Type	dsp/hexagon_Debug_toolv88_v79/calculator_stub.c	/^struct Type {$/;"	s	file:
+Type	dsp/hexagon_Debug_toolv88_v79/calculator_stub.c	/^typedef struct Type Type;$/;"	t	typeref:struct:Type	file:
+UnionType	dsp/hexagon_Debug_toolv88_v79/calculator_skel.c	/^struct UnionType {$/;"	s	file:
+UnionType	dsp/hexagon_Debug_toolv88_v79/calculator_skel.c	/^typedef struct UnionType UnionType;$/;"	t	typeref:struct:UnionType	file:
+UnionType	dsp/hexagon_Debug_toolv88_v79/calculator_stub.c	/^struct UnionType {$/;"	s	file:
+UnionType	dsp/hexagon_Debug_toolv88_v79/calculator_stub.c	/^typedef struct UnionType UnionType;$/;"	t	typeref:struct:UnionType	file:
+VTCM_ENABLED	dsp/calculator_imp.c	/^#define VTCM_ENABLED /;"	d	file:
+V_TARGET	dsp/Makefile	/^V_TARGET = $(word 1,$(subst _, ,$(V)))$/;"	m
+_ALIGN_SIZE	dsp/hexagon_Debug_toolv88_v79/calculator_skel.c	/^#define _ALIGN_SIZE(/;"	d	file:
+_ALIGN_SIZE	dsp/hexagon_Debug_toolv88_v79/calculator_stub.c	/^#define _ALIGN_SIZE(/;"	d	file:
+_ALLOCATOR_H	dsp/hexagon_Debug_toolv88_v79/calculator_skel.c	/^#define _ALLOCATOR_H$/;"	d	file:
+_ALLOCATOR_H	dsp/hexagon_Debug_toolv88_v79/calculator_stub.c	/^#define _ALLOCATOR_H$/;"	d	file:
+_ASSIGN	dsp/hexagon_Debug_toolv88_v79/calculator.h	/^#define _ASSIGN(/;"	d
+_ATTRIBUTE_UNUSED	dsp/hexagon_Debug_toolv88_v79/calculator.h	/^#define _ATTRIBUTE_UNUSED /;"	d
+_ATTRIBUTE_UNUSED	dsp/hexagon_Debug_toolv88_v79/calculator.h	/^#define _ATTRIBUTE_UNUSED$/;"	d
+_ATTRIBUTE_VISIBILITY	dsp/hexagon_Debug_toolv88_v79/calculator.h	/^#define _ATTRIBUTE_VISIBILITY /;"	d
+_ATTRIBUTE_VISIBILITY	dsp/hexagon_Debug_toolv88_v79/calculator.h	/^#define _ATTRIBUTE_VISIBILITY$/;"	d
+_CALCULATOR_H	dsp/hexagon_Debug_toolv88_v79/calculator.h	/^#define _CALCULATOR_H$/;"	d
+_CALCULATOR_SKEL_H	dsp/hexagon_Debug_toolv88_v79/calculator_skel.c	/^#define _CALCULATOR_SKEL_H$/;"	d	file:
+_CALCULATOR_SLIM_H	dsp/hexagon_Debug_toolv88_v79/calculator_skel.c	/^#define _CALCULATOR_SLIM_H$/;"	d	file:
+_CALCULATOR_SLIM_H	dsp/hexagon_Debug_toolv88_v79/calculator_stub.c	/^#define _CALCULATOR_SLIM_H$/;"	d	file:
+_CALCULATOR_STUB_H	dsp/hexagon_Debug_toolv88_v79/calculator_stub.c	/^#define _CALCULATOR_STUB_H$/;"	d	file:
+_CATCH_FARF	dsp/hexagon_Debug_toolv88_v79/calculator.h	/^#define _CATCH_FARF(/;"	d
+_COPY	dsp/hexagon_Debug_toolv88_v79/calculator.h	/^#define _COPY(/;"	d
+_COPYIF	dsp/hexagon_Debug_toolv88_v79/calculator.h	/^#define _COPYIF(/;"	d
+_DEBUG	dsp/calculator_imp.c	/^#define _DEBUG$/;"	d	file:
+_MEMMOVEIF	dsp/hexagon_Debug_toolv88_v79/calculator.h	/^#define _MEMMOVEIF(/;"	d
+_OFFSET	dsp/hexagon_Debug_toolv88_v79/calculator.h	/^#define _OFFSET(/;"	d
+_QAIC_ALLOCATE	dsp/hexagon_Debug_toolv88_v79/calculator.h	/^#define _QAIC_ALLOCATE(/;"	d
+_QAIC_ASSERT	dsp/hexagon_Debug_toolv88_v79/calculator.h	/^#define _QAIC_ASSERT(/;"	d
+_QAIC_CATCH	dsp/hexagon_Debug_toolv88_v79/calculator.h	/^#define _QAIC_CATCH(/;"	d
+_QAIC_ENV_H	dsp/hexagon_Debug_toolv88_v79/calculator.h	/^#define _QAIC_ENV_H$/;"	d
+_QAIC_FARF	dsp/hexagon_Debug_toolv88_v79/calculator.h	/^#define _QAIC_FARF(/;"	d
+_STD_STRLEN_IF	dsp/hexagon_Debug_toolv88_v79/calculator.h	/^#define _STD_STRLEN_IF(/;"	d
+_TRY	dsp/hexagon_Debug_toolv88_v79/calculator.h	/^#define _TRY(/;"	d
+_TRY_FARF	dsp/hexagon_Debug_toolv88_v79/calculator.h	/^#define _TRY_FARF(/;"	d
+__QAIC_DBG_PRINTF__	dsp/hexagon_Debug_toolv88_v79/calculator.h	/^   #define __QAIC_DBG_PRINTF__(/;"	d
+__QAIC_HEADER	dsp/hexagon_Debug_toolv88_v79/calculator.h	/^#define __QAIC_HEADER(/;"	d
+__QAIC_HEADER_ATTRIBUTE	dsp/hexagon_Debug_toolv88_v79/calculator.h	/^#define __QAIC_HEADER_ATTRIBUTE$/;"	d
+__QAIC_HEADER_EXPORT	dsp/hexagon_Debug_toolv88_v79/calculator.h	/^#define __QAIC_HEADER_EXPORT$/;"	d
+__QAIC_IMPL	dsp/hexagon_Debug_toolv88_v79/calculator.h	/^#define __QAIC_IMPL(/;"	d
+__QAIC_IMPL_ATTRIBUTE	dsp/hexagon_Debug_toolv88_v79/calculator.h	/^#define __QAIC_IMPL_ATTRIBUTE$/;"	d
+__QAIC_IMPL_EXPORT	dsp/hexagon_Debug_toolv88_v79/calculator.h	/^#define __QAIC_IMPL_EXPORT$/;"	d
+__QAIC_REMOTE	dsp/hexagon_Debug_toolv88_v79/calculator.h	/^#define __QAIC_REMOTE(/;"	d
+__QAIC_SKEL	dsp/hexagon_Debug_toolv88_v79/calculator.h	/^#define __QAIC_SKEL(/;"	d
+__QAIC_SKEL	dsp/hexagon_Debug_toolv88_v79/calculator_skel.c	/^__QAIC_SKEL_EXPORT int __QAIC_SKEL(calculator_skel_handle_invoke)(remote_handle64 _h, uint32_t _/;"	f	typeref:typename:__QAIC_SKEL_EXPORT int
+__QAIC_SKEL_ATTRIBUTE	dsp/hexagon_Debug_toolv88_v79/calculator.h	/^#define __QAIC_SKEL_ATTRIBUTE$/;"	d
+__QAIC_SKEL_EXPORT	dsp/hexagon_Debug_toolv88_v79/calculator.h	/^#define __QAIC_SKEL_EXPORT$/;"	d
+__QAIC_SLIM	dsp/hexagon_Debug_toolv88_v79/calculator_skel.c	/^#define __QAIC_SLIM(/;"	d	file:
+__QAIC_SLIM	dsp/hexagon_Debug_toolv88_v79/calculator_stub.c	/^#define __QAIC_SLIM(/;"	d	file:
+__QAIC_SLIM_EXPORT	dsp/hexagon_Debug_toolv88_v79/calculator_skel.c	/^#define __QAIC_SLIM_EXPORT$/;"	d	file:
+__QAIC_SLIM_EXPORT	dsp/hexagon_Debug_toolv88_v79/calculator_stub.c	/^#define __QAIC_SLIM_EXPORT$/;"	d	file:
+__QAIC_STUB	dsp/hexagon_Debug_toolv88_v79/calculator.h	/^#define __QAIC_STUB(/;"	d
+__QAIC_STUB	dsp/hexagon_Debug_toolv88_v79/calculator_stub.c	/^__QAIC_STUB_EXPORT int __QAIC_STUB(calculator_close)(remote_handle64 h) __QAIC_STUB_ATTRIBUTE {$/;"	f	typeref:typename:__QAIC_STUB_EXPORT int
+__QAIC_STUB	dsp/hexagon_Debug_toolv88_v79/calculator_stub.c	/^__QAIC_STUB_EXPORT int __QAIC_STUB(calculator_gemm)(remote_handle64 _handle, const float* input_/;"	f	typeref:typename:__QAIC_STUB_EXPORT int
+__QAIC_STUB	dsp/hexagon_Debug_toolv88_v79/calculator_stub.c	/^__QAIC_STUB_EXPORT int __QAIC_STUB(calculator_open)(const char* uri, remote_handle64* h) __QAIC_/;"	f	typeref:typename:__QAIC_STUB_EXPORT int
+__QAIC_STUB_ATTRIBUTE	dsp/hexagon_Debug_toolv88_v79/calculator.h	/^#define __QAIC_STUB_ATTRIBUTE$/;"	d
+__QAIC_STUB_EXPORT	dsp/hexagon_Debug_toolv88_v79/calculator.h	/^#define __QAIC_STUB_EXPORT$/;"	d
+__anonce56a71b010a	dsp/calculator_imp.c	/^    union {$/;"	u	function:float_to_bits	file:
+__has_include	build/CMakeFiles/3.22.1/CompilerIdC/CMakeCCompilerId.c	/^#  define __has_include(/;"	d	file:
+__has_include	build/CMakeFiles/3.22.1/CompilerIdCXX/CMakeCXXCompilerId.cpp	/^#  define __has_include(/;"	d	file:
+_allocator	dsp/hexagon_Debug_toolv88_v79/calculator_skel.c	/^typedef struct _allocator {$/;"	s	file:
+_allocator	dsp/hexagon_Debug_toolv88_v79/calculator_skel.c	/^} _allocator;$/;"	t	typeref:struct:_allocator	file:
+_allocator	dsp/hexagon_Debug_toolv88_v79/calculator_stub.c	/^typedef struct _allocator {$/;"	s	file:
+_allocator	dsp/hexagon_Debug_toolv88_v79/calculator_stub.c	/^} _allocator;$/;"	t	typeref:struct:_allocator	file:
+_allocator_alloc	dsp/hexagon_Debug_toolv88_v79/calculator_skel.c	/^static __inline int _allocator_alloc(_allocator* me,$/;"	f	typeref:typename:_ATTRIBUTE_UNUSED int	file:
+_allocator_alloc	dsp/hexagon_Debug_toolv88_v79/calculator_stub.c	/^static __inline int _allocator_alloc(_allocator* me,$/;"	f	typeref:typename:_ATTRIBUTE_UNUSED int	file:
+_allocator_deinit	dsp/hexagon_Debug_toolv88_v79/calculator_skel.c	/^static __inline void _allocator_deinit(_allocator* me) {$/;"	f	typeref:typename:_ATTRIBUTE_UNUSED void	file:
+_allocator_deinit	dsp/hexagon_Debug_toolv88_v79/calculator_stub.c	/^static __inline void _allocator_deinit(_allocator* me) {$/;"	f	typeref:typename:_ATTRIBUTE_UNUSED void	file:
+_allocator_init	dsp/hexagon_Debug_toolv88_v79/calculator_skel.c	/^static __inline void _allocator_init(_allocator* me, uint8_t* stack, int stackSize) {$/;"	f	typeref:typename:_ATTRIBUTE_UNUSED void	file:
+_allocator_init	dsp/hexagon_Debug_toolv88_v79/calculator_stub.c	/^static __inline void _allocator_init(_allocator* me, uint8_t* stack, int stackSize) {$/;"	f	typeref:typename:_ATTRIBUTE_UNUSED void	file:
+_heap	dsp/hexagon_Debug_toolv88_v79/calculator_skel.c	/^struct _heap {$/;"	s	file:
+_heap	dsp/hexagon_Debug_toolv88_v79/calculator_skel.c	/^typedef struct _heap _heap;$/;"	t	typeref:struct:_heap	file:
+_heap	dsp/hexagon_Debug_toolv88_v79/calculator_stub.c	/^struct _heap {$/;"	s	file:
+_heap	dsp/hexagon_Debug_toolv88_v79/calculator_stub.c	/^typedef struct _heap _heap;$/;"	t	typeref:struct:_heap	file:
+_heap_alloc	dsp/hexagon_Debug_toolv88_v79/calculator_skel.c	/^static __inline int _heap_alloc(_heap** ppa, const char* loc, size_t size, void** ppbuf) {$/;"	f	typeref:typename:_ATTRIBUTE_UNUSED int	file:
+_heap_alloc	dsp/hexagon_Debug_toolv88_v79/calculator_stub.c	/^static __inline int _heap_alloc(_heap** ppa, const char* loc, size_t size, void** ppbuf) {$/;"	f	typeref:typename:_ATTRIBUTE_UNUSED int	file:
+_qaic_memmove	dsp/hexagon_Debug_toolv88_v79/calculator.h	/^static __inline void _qaic_memmove(void* dst, void* src, int size) {$/;"	f	typeref:typename:_ATTRIBUTE_UNUSED void
+_skel_method	dsp/hexagon_Debug_toolv88_v79/calculator_skel.c	/^static __inline int _skel_method(int (*_pfn)(remote_handle64, const float*, int, const float*, i/;"	f	typeref:typename:int	file:
+_skel_method_1	dsp/hexagon_Debug_toolv88_v79/calculator_skel.c	/^static __inline int _skel_method_1(int (*_pfn)(remote_handle64), uint32_t _sc, remote_arg* _pra)/;"	f	typeref:typename:int	file:
+_skel_method_2	dsp/hexagon_Debug_toolv88_v79/calculator_skel.c	/^static __inline int _skel_method_2(int (*_pfn)(const char*, remote_handle64*), uint32_t _sc, rem/;"	f	typeref:typename:int	file:
+_stub_method	dsp/hexagon_Debug_toolv88_v79/calculator_stub.c	/^static __inline int _stub_method(remote_handle64 _handle, uint32_t _mid, char* _in0[1], uint32_t/;"	f	typeref:typename:int	file:
+all	build/Makefile	/^all: cmake_check_build_system$/;"	t
+bDefaultCase	dsp/hexagon_Debug_toolv88_v79/calculator_skel.c	/^   uint8_t              bDefaultCase;$/;"	m	struct:UnionType	typeref:typename:uint8_t	file:
+bDefaultCase	dsp/hexagon_Debug_toolv88_v79/calculator_stub.c	/^   uint8_t              bDefaultCase;$/;"	m	struct:UnionType	typeref:typename:uint8_t	file:
+bNotNil	dsp/hexagon_Debug_toolv88_v79/calculator_skel.c	/^   uint8_t  bNotNil;$/;"	m	struct:Parameter	typeref:typename:uint8_t	file:
+bNotNil	dsp/hexagon_Debug_toolv88_v79/calculator_stub.c	/^   uint8_t  bNotNil;$/;"	m	struct:Parameter	typeref:typename:uint8_t	file:
+buf	dsp/hexagon_Debug_toolv88_v79/calculator_skel.c	/^   uint64_t buf;$/;"	m	struct:_heap	typeref:typename:uint64_t	file:
+buf	dsp/hexagon_Debug_toolv88_v79/calculator_stub.c	/^   uint64_t buf;$/;"	m	struct:_heap	typeref:typename:uint64_t	file:
+calculator-api.cpp.i	build/Makefile	/^calculator-api.cpp.i:$/;"	t
+calculator-api.cpp.o	build/Makefile	/^calculator-api.cpp.o:$/;"	t
+calculator-api.cpp.s	build/Makefile	/^calculator-api.cpp.s:$/;"	t
+calculator-api.i	build/Makefile	/^calculator-api.i: calculator-api.cpp.i$/;"	t
+calculator-api.o	build/Makefile	/^calculator-api.o: calculator-api.cpp.o$/;"	t
+calculator-api.s	build/Makefile	/^calculator-api.s: calculator-api.cpp.s$/;"	t
+calculator_URI	dsp/hexagon_Debug_toolv88_v79/calculator.h	/^#define calculator_URI /;"	d
+calculator_close	dsp/calculator_imp.c	/^int calculator_close(remote_handle64 handle) {$/;"	f	typeref:typename:int
+calculator_gemm	dsp/calculator_imp.c	/^int calculator_gemm(remote_handle64 h, $/;"	f	typeref:typename:int
+calculator_gemm_cpp	calculator-api.cpp	/^int calculator_gemm_cpp(const float* matrix1,$/;"	f	typeref:typename:int
+calculator_init	calculator-api.cpp	/^int calculator_init(const char* dsp_library_path) {$/;"	f	typeref:typename:int
+calculator_open	dsp/calculator_imp.c	/^int calculator_open(const char*uri, remote_handle64* handle) {$/;"	f	typeref:typename:int
+calculator_skel	dsp/CMakeLists.txt	/^add_library(calculator_skel SHARED ${srcs})$/;"	t
+calculator_skel_handle_invoke_qaic_version	dsp/hexagon_Debug_toolv88_v79/calculator_skel.c	/^_ATTRIBUTE_VISIBILITY uint32_t calculator_skel_handle_invoke_qaic_version = 10049;$/;"	v	typeref:typename:_ATTRIBUTE_VISIBILITY uint32_t
+calculator_skel_handle_invoke_uri	dsp/hexagon_Debug_toolv88_v79/calculator_skel.c	/^_ATTRIBUTE_VISIBILITY char calculator_skel_handle_invoke_uri[71+1]="file:\/\/\/libcalculator_ske/;"	v	typeref:typename:_ATTRIBUTE_VISIBILITY char[]
+caseValues	dsp/hexagon_Debug_toolv88_v79/calculator_skel.c	/^   const CaseValuePtr   caseValues;$/;"	m	struct:UnionType	typeref:typename:const CaseValuePtr	file:
+caseValues	dsp/hexagon_Debug_toolv88_v79/calculator_stub.c	/^   const CaseValuePtr   caseValues;$/;"	m	struct:UnionType	typeref:typename:const CaseValuePtr	file:
+cases	dsp/hexagon_Debug_toolv88_v79/calculator_skel.c	/^   const Type * const   *cases;$/;"	m	struct:UnionType	typeref:typename:const Type * const *	file:
+cases	dsp/hexagon_Debug_toolv88_v79/calculator_stub.c	/^   const Type * const   *cases;$/;"	m	struct:UnionType	typeref:typename:const Type * const *	file:
+clean	build/Makefile	/^clean:$/;"	t
+clean/fast	build/Makefile	/^clean\/fast: clean$/;"	t
+cmakeMinimumRequired	dsp/CMakePresets.json	/^  "cmakeMinimumRequired": {$/;"	o
+cmake_check_build_system	build/Makefile	/^cmake_check_build_system:$/;"	t
+cmake_force	build/Makefile	/^cmake_force:$/;"	t
+common_incs	dsp/CMakeLists.txt	/^set(common_incs$/;"	v
+const	build/CMakeFiles/3.22.1/CompilerIdC/CMakeCCompilerId.c	/^# define const$/;"	d	file:
+cpu_gemm_naive	npu_gemm_cli.cpp	/^void cpu_gemm_naive($/;"	f	typeref:typename:void
+default_target	build/Makefile	/^default_target: all$/;"	t
+depend	build/Makefile	/^depend:$/;"	t
+descriptor	dsp/hexagon_Debug_toolv88_v79/calculator_skel.c	/^   const Type           *descriptor;$/;"	m	struct:UnionType	typeref:typename:const Type *	file:
+descriptor	dsp/hexagon_Debug_toolv88_v79/calculator_stub.c	/^   const Type           *descriptor;$/;"	m	struct:UnionType	typeref:typename:const Type *	file:
+dsp/hexagon_Debug_toolv88_v79/calculator_stub.c.i	build/Makefile	/^dsp\/hexagon_Debug_toolv88_v79\/calculator_stub.c.i:$/;"	t
+dsp/hexagon_Debug_toolv88_v79/calculator_stub.c.o	build/Makefile	/^dsp\/hexagon_Debug_toolv88_v79\/calculator_stub.c.o:$/;"	t
+dsp/hexagon_Debug_toolv88_v79/calculator_stub.c.s	build/Makefile	/^dsp\/hexagon_Debug_toolv88_v79\/calculator_stub.c.s:$/;"	t
+dsp/hexagon_Debug_toolv88_v79/calculator_stub.i	build/Makefile	/^dsp\/hexagon_Debug_toolv88_v79\/calculator_stub.i: dsp\/hexagon_Debug_toolv88_v79\/calculator_st/;"	t
+dsp/hexagon_Debug_toolv88_v79/calculator_stub.o	build/Makefile	/^dsp\/hexagon_Debug_toolv88_v79\/calculator_stub.o: dsp\/hexagon_Debug_toolv88_v79\/calculator_st/;"	t
+dsp/hexagon_Debug_toolv88_v79/calculator_stub.s	build/Makefile	/^dsp\/hexagon_Debug_toolv88_v79\/calculator_stub.s: dsp\/hexagon_Debug_toolv88_v79\/calculator_st/;"	t
+edit_cache	build/Makefile	/^edit_cache:$/;"	t
+edit_cache/fast	build/Makefile	/^edit_cache\/fast: edit_cache$/;"	t
+f	dsp/calculator_imp.c	/^        float f;$/;"	m	union:float_to_bits::__anonce56a71b010a	typeref:typename:float	file:
+fill_matrix	npu_gemm_cli.cpp	/^void fill_matrix(float* mat, int size) {$/;"	f	typeref:typename:void
+float_to_bits	dsp/calculator_imp.c	/^static inline int32_t float_to_bits(float input)$/;"	f	typeref:typename:int32_t	file:
+help	build/Makefile	/^help:$/;"	t
+i	dsp/calculator_imp.c	/^        int32_t i;$/;"	m	union:float_to_bits::__anonce56a71b010a	typeref:typename:int32_t	file:
+iids	dsp/hexagon_Debug_toolv88_v79/calculator_skel.c	/^   const uint32_t                   *iids;$/;"	m	struct:Interface	typeref:typename:const uint32_t *	file:
+iids	dsp/hexagon_Debug_toolv88_v79/calculator_stub.c	/^   const uint32_t                   *iids;$/;"	m	struct:Interface	typeref:typename:const uint32_t *	file:
+inAlignment	dsp/hexagon_Debug_toolv88_v79/calculator_skel.c	/^   uint8_t                inAlignment;$/;"	m	struct:StructType	typeref:typename:uint8_t	file:
+inAlignment	dsp/hexagon_Debug_toolv88_v79/calculator_skel.c	/^   uint8_t                inAlignment;$/;"	m	struct:UnionType	typeref:typename:uint8_t	file:
+inAlignment	dsp/hexagon_Debug_toolv88_v79/calculator_stub.c	/^   uint8_t                inAlignment;$/;"	m	struct:StructType	typeref:typename:uint8_t	file:
+inAlignment	dsp/hexagon_Debug_toolv88_v79/calculator_stub.c	/^   uint8_t                inAlignment;$/;"	m	struct:UnionType	typeref:typename:uint8_t	file:
+inCaseAlignment	dsp/hexagon_Debug_toolv88_v79/calculator_skel.c	/^   uint8_t                inCaseAlignment;$/;"	m	struct:UnionType	typeref:typename:uint8_t	file:
+inCaseAlignment	dsp/hexagon_Debug_toolv88_v79/calculator_stub.c	/^   uint8_t                inCaseAlignment;$/;"	m	struct:UnionType	typeref:typename:uint8_t	file:
+inSize	dsp/hexagon_Debug_toolv88_v79/calculator_skel.c	/^   int32_t               inSize;$/;"	m	struct:StructType	typeref:typename:int32_t	file:
+inSize	dsp/hexagon_Debug_toolv88_v79/calculator_skel.c	/^   int32_t               inSize;$/;"	m	struct:UnionType	typeref:typename:int32_t	file:
+inSize	dsp/hexagon_Debug_toolv88_v79/calculator_skel.c	/^   uint32_t               inSize;$/;"	m	struct:SequenceType	typeref:typename:uint32_t	file:
+inSize	dsp/hexagon_Debug_toolv88_v79/calculator_stub.c	/^   int32_t               inSize;$/;"	m	struct:StructType	typeref:typename:int32_t	file:
+inSize	dsp/hexagon_Debug_toolv88_v79/calculator_stub.c	/^   int32_t               inSize;$/;"	m	struct:UnionType	typeref:typename:int32_t	file:
+inSize	dsp/hexagon_Debug_toolv88_v79/calculator_stub.c	/^   uint32_t               inSize;$/;"	m	struct:SequenceType	typeref:typename:uint32_t	file:
+include	dsp/CMakePresets.json	/^  "include": [$/;"	a
+info_arch	build/CMakeFiles/3.22.1/CompilerIdC/CMakeCCompilerId.c	/^char const* info_arch = "INFO" ":" "arch[" ARCHITECTURE_ID "]";$/;"	v	typeref:typename:char const *
+info_arch	build/CMakeFiles/3.22.1/CompilerIdCXX/CMakeCXXCompilerId.cpp	/^char const* info_arch = "INFO" ":" "arch[" ARCHITECTURE_ID "]";$/;"	v	typeref:typename:char const *
+info_compiler	build/CMakeFiles/3.22.1/CompilerIdC/CMakeCCompilerId.c	/^char const* info_compiler = "INFO" ":" "compiler[" COMPILER_ID "]";$/;"	v	typeref:typename:char const *
+info_compiler	build/CMakeFiles/3.22.1/CompilerIdCXX/CMakeCXXCompilerId.cpp	/^char const* info_compiler = "INFO" ":" "compiler[" COMPILER_ID "]";$/;"	v	typeref:typename:char const *
+info_cray	build/CMakeFiles/3.22.1/CompilerIdC/CMakeCCompilerId.c	/^char const *info_cray = "INFO" ":" "compiler_wrapper[CrayPrgEnv]";$/;"	v	typeref:typename:char const *
+info_cray	build/CMakeFiles/3.22.1/CompilerIdCXX/CMakeCXXCompilerId.cpp	/^char const *info_cray = "INFO" ":" "compiler_wrapper[CrayPrgEnv]";$/;"	v	typeref:typename:char const *
+info_language_extensions_default	build/CMakeFiles/3.22.1/CompilerIdC/CMakeCCompilerId.c	/^const char* info_language_extensions_default = "INFO" ":" "extensions_default["$/;"	v	typeref:typename:const char *
+info_language_extensions_default	build/CMakeFiles/3.22.1/CompilerIdCXX/CMakeCXXCompilerId.cpp	/^const char* info_language_extensions_default = "INFO" ":" "extensions_default["$/;"	v	typeref:typename:const char *
+info_language_standard_default	build/CMakeFiles/3.22.1/CompilerIdC/CMakeCCompilerId.c	/^const char* info_language_standard_default =$/;"	v	typeref:typename:const char *
+info_language_standard_default	build/CMakeFiles/3.22.1/CompilerIdCXX/CMakeCXXCompilerId.cpp	/^const char* info_language_standard_default = "INFO" ":" "standard_default["$/;"	v	typeref:typename:const char *
+info_platform	build/CMakeFiles/3.22.1/CompilerIdC/CMakeCCompilerId.c	/^char const* info_platform = "INFO" ":" "platform[" PLATFORM_ID "]";$/;"	v	typeref:typename:char const *
+info_platform	build/CMakeFiles/3.22.1/CompilerIdCXX/CMakeCXXCompilerId.cpp	/^char const* info_platform = "INFO" ":" "platform[" PLATFORM_ID "]";$/;"	v	typeref:typename:char const *
+info_simulate	build/CMakeFiles/3.22.1/CompilerIdC/CMakeCCompilerId.c	/^char const* info_simulate = "INFO" ":" "simulate[" SIMULATE_ID "]";$/;"	v	typeref:typename:char const *
+info_simulate	build/CMakeFiles/3.22.1/CompilerIdCXX/CMakeCXXCompilerId.cpp	/^char const* info_simulate = "INFO" ":" "simulate[" SIMULATE_ID "]";$/;"	v	typeref:typename:char const *
+info_simulate_version	build/CMakeFiles/3.22.1/CompilerIdC/CMakeCCompilerId.c	/^char const info_simulate_version[] = {$/;"	v	typeref:typename:char const[]
+info_simulate_version	build/CMakeFiles/3.22.1/CompilerIdCXX/CMakeCXXCompilerId.cpp	/^char const info_simulate_version[] = {$/;"	v	typeref:typename:char const[]
+info_version	build/CMakeFiles/3.22.1/CompilerIdC/CMakeCCompilerId.c	/^char const info_version[] = {$/;"	v	typeref:typename:char const[]
+info_version	build/CMakeFiles/3.22.1/CompilerIdC/CMakeCCompilerId.c	/^char const* info_version = "INFO" ":" "compiler_version[" COMPILER_VERSION "]";$/;"	v	typeref:typename:char const *
+info_version	build/CMakeFiles/3.22.1/CompilerIdCXX/CMakeCXXCompilerId.cpp	/^char const info_version[] = {$/;"	v	typeref:typename:char const[]
+info_version	build/CMakeFiles/3.22.1/CompilerIdCXX/CMakeCXXCompilerId.cpp	/^char const* info_version = "INFO" ":" "compiler_version[" COMPILER_VERSION "]";$/;"	v	typeref:typename:char const *
+info_version_internal	build/CMakeFiles/3.22.1/CompilerIdC/CMakeCCompilerId.c	/^char const info_version_internal[] = {$/;"	v	typeref:typename:char const[]
+info_version_internal	build/CMakeFiles/3.22.1/CompilerIdC/CMakeCCompilerId.c	/^char const* info_version_internal = "INFO" ":" "compiler_version_internal[" COMPILER_VERSION_INT/;"	v	typeref:typename:char const *
+info_version_internal	build/CMakeFiles/3.22.1/CompilerIdCXX/CMakeCXXCompilerId.cpp	/^char const info_version_internal[] = {$/;"	v	typeref:typename:char const[]
+info_version_internal	build/CMakeFiles/3.22.1/CompilerIdCXX/CMakeCXXCompilerId.cpp	/^char const* info_version_internal = "INFO" ":" "compiler_version_internal[" COMPILER_VERSION_INT/;"	v	typeref:typename:char const *
+loc	dsp/hexagon_Debug_toolv88_v79/calculator_skel.c	/^   const char* loc;$/;"	m	struct:_heap	typeref:typename:const char *	file:
+loc	dsp/hexagon_Debug_toolv88_v79/calculator_stub.c	/^   const char* loc;$/;"	m	struct:_heap	typeref:typename:const char *	file:
+main	build/CMakeFiles/3.22.1/CompilerIdC/CMakeCCompilerId.c	/^int main(argc, argv) int argc; char *argv[];$/;"	f
+main	build/CMakeFiles/3.22.1/CompilerIdC/CMakeCCompilerId.c	/^void main() {}$/;"	f	typeref:typename:void
+main	build/CMakeFiles/3.22.1/CompilerIdCXX/CMakeCXXCompilerId.cpp	/^int main(int argc, char* argv[])$/;"	f	typeref:typename:int
+main	dsp/calculator_imp.c	/^int main(int argc, char* argv[]) {$/;"	f	typeref:typename:int
+main	npu_gemm_cli.cpp	/^int main(int argc, char* argv[]) {$/;"	f	typeref:typename:int
+major	dsp/CMakePresets.json	/^    "major": 3,$/;"	n	object:cmakeMinimumRequired
+matmul_ijk	dsp/calculator_imp.c	/^static inline void matmul_ijk(float *restrict input_matrix1,$/;"	f	typeref:typename:void	file:
+matmul_ikj_transposed_b	dsp/calculator_imp.c	/^static inline void matmul_ikj_transposed_b(float *restrict input_matrix1,$/;"	f	typeref:typename:void	file:
+maxArgs	dsp/hexagon_Debug_toolv88_v79/calculator_skel.c	/^   int                         maxArgs;$/;"	m	struct:Method	typeref:typename:int	file:
+maxArgs	dsp/hexagon_Debug_toolv88_v79/calculator_stub.c	/^   int                         maxArgs;$/;"	m	struct:Method	typeref:typename:int	file:
+members	dsp/hexagon_Debug_toolv88_v79/calculator_skel.c	/^   const Type * const   *members;$/;"	m	struct:StructType	typeref:typename:const Type * const *	file:
+members	dsp/hexagon_Debug_toolv88_v79/calculator_stub.c	/^   const Type * const   *members;$/;"	m	struct:StructType	typeref:typename:const Type * const *	file:
+methodArray	dsp/hexagon_Debug_toolv88_v79/calculator_skel.c	/^   const Method  * const          *methodArray;$/;"	m	struct:Interface	typeref:typename:const Method * const *	file:
+methodArray	dsp/hexagon_Debug_toolv88_v79/calculator_stub.c	/^   const Method  * const          *methodArray;$/;"	m	struct:Interface	typeref:typename:const Method * const *	file:
+methodArrays	dsp/hexagon_Debug_toolv88_v79/calculator_skel.c	/^static const Method* const methodArrays[3] = {&(methods[0]),&(methods[1]),&(methods[2])};$/;"	v	typeref:typename:const Method * const[3]	file:
+methodArrays	dsp/hexagon_Debug_toolv88_v79/calculator_stub.c	/^static const Method* const methodArrays[3] = {&(methods[0]),&(methods[1]),&(methods[2])};$/;"	v	typeref:typename:const Method * const[3]	file:
+methodStringArray	dsp/hexagon_Debug_toolv88_v79/calculator_skel.c	/^   const uint16_t*                  methodStringArray;$/;"	m	struct:Interface	typeref:typename:const uint16_t *	file:
+methodStringArray	dsp/hexagon_Debug_toolv88_v79/calculator_stub.c	/^   const uint16_t*                  methodStringArray;$/;"	m	struct:Interface	typeref:typename:const uint16_t *	file:
+methodStrings	dsp/hexagon_Debug_toolv88_v79/calculator_skel.c	/^   const uint16_t*                  methodStrings;$/;"	m	struct:Interface	typeref:typename:const uint16_t *	file:
+methodStrings	dsp/hexagon_Debug_toolv88_v79/calculator_skel.c	/^static const uint16_t methodStrings[14] = {55,14,0,42,58,69,63,35,28,60,65,71,49,71};$/;"	v	typeref:typename:const uint16_t[14]	file:
+methodStrings	dsp/hexagon_Debug_toolv88_v79/calculator_stub.c	/^   const uint16_t*                  methodStrings;$/;"	m	struct:Interface	typeref:typename:const uint16_t *	file:
+methodStrings	dsp/hexagon_Debug_toolv88_v79/calculator_stub.c	/^static const uint16_t methodStrings[14] = {55,14,0,42,58,69,63,35,28,60,65,71,49,71};$/;"	v	typeref:typename:const uint16_t[14]	file:
+methodStringsArrays	dsp/hexagon_Debug_toolv88_v79/calculator_skel.c	/^static const uint16_t methodStringsArrays[3] = {9,12,0};$/;"	v	typeref:typename:const uint16_t[3]	file:
+methodStringsArrays	dsp/hexagon_Debug_toolv88_v79/calculator_stub.c	/^static const uint16_t methodStringsArrays[3] = {9,12,0};$/;"	v	typeref:typename:const uint16_t[3]	file:
+methods	dsp/hexagon_Debug_toolv88_v79/calculator_skel.c	/^static const Method methods[3] = {{REMOTE_SCALARS_MAKEX(0,0,0x2,0x0,0x0,0x1),0x4,0x0,2,2,(&(para/;"	v	typeref:typename:const Method[3]	file:
+methods	dsp/hexagon_Debug_toolv88_v79/calculator_stub.c	/^static const Method methods[3] = {{REMOTE_SCALARS_MAKEX(0,0,0x2,0x0,0x0,0x1),0x4,0x0,2,2,(&(para/;"	v	typeref:typename:const Method[3]	file:
+minor	dsp/CMakePresets.json	/^    "minor": 28,$/;"	n	object:cmakeMinimumRequired
+mode	dsp/hexagon_Debug_toolv88_v79/calculator_skel.c	/^   uint8_t    mode;$/;"	m	struct:Parameter	typeref:typename:uint8_t	file:
+mode	dsp/hexagon_Debug_toolv88_v79/calculator_stub.c	/^   uint8_t    mode;$/;"	m	struct:Parameter	typeref:typename:uint8_t	file:
+nCases	dsp/hexagon_Debug_toolv88_v79/calculator_skel.c	/^   uint32_t               nCases;$/;"	m	struct:UnionType	typeref:typename:uint32_t	file:
+nCases	dsp/hexagon_Debug_toolv88_v79/calculator_stub.c	/^   uint32_t               nCases;$/;"	m	struct:UnionType	typeref:typename:uint32_t	file:
+nErr	calculator-api.h	/^    int nErr;            \/\/\/< 错误代码$/;"	m	class:Calculator	typeref:typename:int
+nIIds	dsp/hexagon_Debug_toolv88_v79/calculator_skel.c	/^   int                            nIIds;$/;"	m	struct:Interface	typeref:typename:int	file:
+nIIds	dsp/hexagon_Debug_toolv88_v79/calculator_stub.c	/^   int                            nIIds;$/;"	m	struct:Interface	typeref:typename:int	file:
+nMaxLen	dsp/hexagon_Debug_toolv88_v79/calculator_skel.c	/^   uint32_t               nMaxLen;$/;"	m	struct:SequenceType	typeref:typename:uint32_t	file:
+nMaxLen	dsp/hexagon_Debug_toolv88_v79/calculator_stub.c	/^   uint32_t               nMaxLen;$/;"	m	struct:SequenceType	typeref:typename:uint32_t	file:
+nMembers	dsp/hexagon_Debug_toolv88_v79/calculator_skel.c	/^   uint32_t               nMembers;$/;"	m	struct:StructType	typeref:typename:uint32_t	file:
+nMembers	dsp/hexagon_Debug_toolv88_v79/calculator_stub.c	/^   uint32_t               nMembers;$/;"	m	struct:StructType	typeref:typename:uint32_t	file:
+nMethods	dsp/hexagon_Debug_toolv88_v79/calculator_skel.c	/^   int                            nMethods;$/;"	m	struct:Interface	typeref:typename:int	file:
+nMethods	dsp/hexagon_Debug_toolv88_v79/calculator_stub.c	/^   int                            nMethods;$/;"	m	struct:Interface	typeref:typename:int	file:
+nSize	dsp/hexagon_Debug_toolv88_v79/calculator_skel.c	/^   int nSize;$/;"	m	struct:_allocator	typeref:typename:int	file:
+nSize	dsp/hexagon_Debug_toolv88_v79/calculator_stub.c	/^   int nSize;$/;"	m	struct:_allocator	typeref:typename:int	file:
+nativeCaseAlignment	dsp/hexagon_Debug_toolv88_v79/calculator_skel.c	/^   uint8_t                nativeCaseAlignment;$/;"	m	struct:UnionType	typeref:typename:uint8_t	file:
+nativeCaseAlignment	dsp/hexagon_Debug_toolv88_v79/calculator_stub.c	/^   uint8_t                nativeCaseAlignment;$/;"	m	struct:UnionType	typeref:typename:uint8_t	file:
+npu_gemm_cli	CMakeLists.txt	/^project(npu_gemm_cli)$/;"	p
+npu_gemm_cli.cpp.i	build/Makefile	/^npu_gemm_cli.cpp.i:$/;"	t
+npu_gemm_cli.cpp.o	build/Makefile	/^npu_gemm_cli.cpp.o:$/;"	t
+npu_gemm_cli.cpp.s	build/Makefile	/^npu_gemm_cli.cpp.s:$/;"	t
+npu_gemm_cli.i	build/Makefile	/^npu_gemm_cli.i: npu_gemm_cli.cpp.i$/;"	t
+npu_gemm_cli.o	build/Makefile	/^npu_gemm_cli.o: npu_gemm_cli.cpp.o$/;"	t
+npu_gemm_cli.s	build/Makefile	/^npu_gemm_cli.s: npu_gemm_cli.cpp.s$/;"	t
+npu_gemm_test	CMakeLists.txt	/^add_executable(npu_gemm_test npu_gemm_cli.cpp calculator-api.cpp ${CMAKE_CURRENT_SOURCE_DIR}\/ds/;"	t
+npu_gemm_test	build/Makefile	/^npu_gemm_test: cmake_check_build_system$/;"	t
+npu_gemm_test/fast	build/Makefile	/^npu_gemm_test\/fast:$/;"	t
+numParams	dsp/hexagon_Debug_toolv88_v79/calculator_skel.c	/^   int                         numParams;$/;"	m	struct:Method	typeref:typename:int	file:
+numParams	dsp/hexagon_Debug_toolv88_v79/calculator_stub.c	/^   int                         numParams;$/;"	m	struct:Method	typeref:typename:int	file:
+pPrev	dsp/hexagon_Debug_toolv88_v79/calculator_skel.c	/^   _heap* pPrev;$/;"	m	struct:_heap	typeref:typename:_heap *	file:
+pPrev	dsp/hexagon_Debug_toolv88_v79/calculator_stub.c	/^   _heap* pPrev;$/;"	m	struct:_heap	typeref:typename:_heap *	file:
+parameterArrays	dsp/hexagon_Debug_toolv88_v79/calculator_skel.c	/^static const Parameter* const parameterArrays[11] = {(&(parameters[3])),(&(parameters[3])),(&(pa/;"	v	typeref:typename:const Parameter * const[11]	file:
+parameterArrays	dsp/hexagon_Debug_toolv88_v79/calculator_stub.c	/^static const Parameter* const parameterArrays[11] = {(&(parameters[3])),(&(parameters[3])),(&(pa/;"	v	typeref:typename:const Parameter * const[11]	file:
+parameters	dsp/hexagon_Debug_toolv88_v79/calculator_skel.c	/^static const Parameter parameters[7] = {{SLIM_IFPTR32(0x8,0x10),{{(const uintptr_t)0x0,0}}, 4,SL/;"	v	typeref:typename:const Parameter[7]	file:
+parameters	dsp/hexagon_Debug_toolv88_v79/calculator_stub.c	/^static const Parameter parameters[7] = {{SLIM_IFPTR32(0x8,0x10),{{(const uintptr_t)0x0,0}}, 4,SL/;"	v	typeref:typename:const Parameter[7]	file:
+params	dsp/hexagon_Debug_toolv88_v79/calculator_skel.c	/^   const Parameter * const     *params;$/;"	m	struct:Method	typeref:typename:const Parameter * const *	file:
+params	dsp/hexagon_Debug_toolv88_v79/calculator_stub.c	/^   const Parameter * const     *params;$/;"	m	struct:Method	typeref:typename:const Parameter * const *	file:
+patch	dsp/CMakePresets.json	/^    "patch": 0$/;"	n	object:cmakeMinimumRequired
+pheap	dsp/hexagon_Debug_toolv88_v79/calculator_skel.c	/^   _heap* pheap;$/;"	m	struct:_allocator	typeref:typename:_heap *	file:
+pheap	dsp/hexagon_Debug_toolv88_v79/calculator_stub.c	/^   _heap* pheap;$/;"	m	struct:_allocator	typeref:typename:_heap *	file:
+preinstall	build/Makefile	/^preinstall: all$/;"	t
+preinstall/fast	build/Makefile	/^preinstall\/fast:$/;"	t
+primInAlignment	dsp/hexagon_Debug_toolv88_v79/calculator_skel.c	/^   uint8_t                       primInAlignment;$/;"	m	struct:Method	typeref:typename:uint8_t	file:
+primInAlignment	dsp/hexagon_Debug_toolv88_v79/calculator_stub.c	/^   uint8_t                       primInAlignment;$/;"	m	struct:Method	typeref:typename:uint8_t	file:
+primInSize	dsp/hexagon_Debug_toolv88_v79/calculator_skel.c	/^   int32_t                     primInSize;$/;"	m	struct:Method	typeref:typename:int32_t	file:
+primInSize	dsp/hexagon_Debug_toolv88_v79/calculator_stub.c	/^   int32_t                     primInSize;$/;"	m	struct:Method	typeref:typename:int32_t	file:
+primROutAlignment	dsp/hexagon_Debug_toolv88_v79/calculator_skel.c	/^   uint8_t                       primROutAlignment;$/;"	m	struct:Method	typeref:typename:uint8_t	file:
+primROutAlignment	dsp/hexagon_Debug_toolv88_v79/calculator_stub.c	/^   uint8_t                       primROutAlignment;$/;"	m	struct:Method	typeref:typename:uint8_t	file:
+primROutSize	dsp/hexagon_Debug_toolv88_v79/calculator_skel.c	/^   int32_t                     primROutSize;$/;"	m	struct:Method	typeref:typename:int32_t	file:
+primROutSize	dsp/hexagon_Debug_toolv88_v79/calculator_stub.c	/^   int32_t                     primROutSize;$/;"	m	struct:Method	typeref:typename:int32_t	file:
+print_usage	npu_gemm_cli.cpp	/^void print_usage(const char* prog_name) {$/;"	f	typeref:typename:void
+qnxnto	build/CMakeFiles/3.22.1/CompilerIdC/CMakeCCompilerId.c	/^char const* qnxnto = "INFO" ":" "qnxnto[]";$/;"	v	typeref:typename:char const *
+qnxnto	build/CMakeFiles/3.22.1/CompilerIdCXX/CMakeCXXCompilerId.cpp	/^char const* qnxnto = "INFO" ":" "qnxnto[]";$/;"	v	typeref:typename:char const *
+rebuild_cache	build/Makefile	/^rebuild_cache:$/;"	t
+rebuild_cache/fast	build/Makefile	/^rebuild_cache\/fast: rebuild_cache$/;"	t
+result	calculator-api.h	/^    int64 result;        \/\/\/< 计算结果$/;"	m	class:Calculator	typeref:typename:int64
+routAlignmentPrimIn	dsp/hexagon_Debug_toolv88_v79/calculator_skel.c	/^   uint8_t                routAlignmentPrimIn;$/;"	m	struct:StructType	typeref:typename:uint8_t	file:
+routAlignmentPrimIn	dsp/hexagon_Debug_toolv88_v79/calculator_skel.c	/^   uint8_t                routAlignmentPrimIn;$/;"	m	struct:UnionType	typeref:typename:uint8_t	file:
+routAlignmentPrimIn	dsp/hexagon_Debug_toolv88_v79/calculator_stub.c	/^   uint8_t                routAlignmentPrimIn;$/;"	m	struct:StructType	typeref:typename:uint8_t	file:
+routAlignmentPrimIn	dsp/hexagon_Debug_toolv88_v79/calculator_stub.c	/^   uint8_t                routAlignmentPrimIn;$/;"	m	struct:UnionType	typeref:typename:uint8_t	file:
+routAlignmentPrimROut	dsp/hexagon_Debug_toolv88_v79/calculator_skel.c	/^   uint8_t                routAlignmentPrimROut;$/;"	m	struct:StructType	typeref:typename:uint8_t	file:
+routAlignmentPrimROut	dsp/hexagon_Debug_toolv88_v79/calculator_skel.c	/^   uint8_t                routAlignmentPrimROut;$/;"	m	struct:UnionType	typeref:typename:uint8_t	file:
+routAlignmentPrimROut	dsp/hexagon_Debug_toolv88_v79/calculator_stub.c	/^   uint8_t                routAlignmentPrimROut;$/;"	m	struct:StructType	typeref:typename:uint8_t	file:
+routAlignmentPrimROut	dsp/hexagon_Debug_toolv88_v79/calculator_stub.c	/^   uint8_t                routAlignmentPrimROut;$/;"	m	struct:UnionType	typeref:typename:uint8_t	file:
+routCaseAlignmentPrimIn	dsp/hexagon_Debug_toolv88_v79/calculator_skel.c	/^   uint8_t                routCaseAlignmentPrimIn;$/;"	m	struct:UnionType	typeref:typename:uint8_t	file:
+routCaseAlignmentPrimIn	dsp/hexagon_Debug_toolv88_v79/calculator_stub.c	/^   uint8_t                routCaseAlignmentPrimIn;$/;"	m	struct:UnionType	typeref:typename:uint8_t	file:
+routCaseAlignmentPrimROut	dsp/hexagon_Debug_toolv88_v79/calculator_skel.c	/^   uint8_t                routCaseAlignmentPrimROut;$/;"	m	struct:UnionType	typeref:typename:uint8_t	file:
+routCaseAlignmentPrimROut	dsp/hexagon_Debug_toolv88_v79/calculator_stub.c	/^   uint8_t                routCaseAlignmentPrimROut;$/;"	m	struct:UnionType	typeref:typename:uint8_t	file:
+routSizePrimIn	dsp/hexagon_Debug_toolv88_v79/calculator_skel.c	/^   int32_t               routSizePrimIn;$/;"	m	struct:StructType	typeref:typename:int32_t	file:
+routSizePrimIn	dsp/hexagon_Debug_toolv88_v79/calculator_skel.c	/^   int32_t               routSizePrimIn;$/;"	m	struct:UnionType	typeref:typename:int32_t	file:
+routSizePrimIn	dsp/hexagon_Debug_toolv88_v79/calculator_skel.c	/^   uint32_t               routSizePrimIn;$/;"	m	struct:SequenceType	typeref:typename:uint32_t	file:
+routSizePrimIn	dsp/hexagon_Debug_toolv88_v79/calculator_stub.c	/^   int32_t               routSizePrimIn;$/;"	m	struct:StructType	typeref:typename:int32_t	file:
+routSizePrimIn	dsp/hexagon_Debug_toolv88_v79/calculator_stub.c	/^   int32_t               routSizePrimIn;$/;"	m	struct:UnionType	typeref:typename:int32_t	file:
+routSizePrimIn	dsp/hexagon_Debug_toolv88_v79/calculator_stub.c	/^   uint32_t               routSizePrimIn;$/;"	m	struct:SequenceType	typeref:typename:uint32_t	file:
+routSizePrimROut	dsp/hexagon_Debug_toolv88_v79/calculator_skel.c	/^   int32_t               routSizePrimROut;$/;"	m	struct:StructType	typeref:typename:int32_t	file:
+routSizePrimROut	dsp/hexagon_Debug_toolv88_v79/calculator_skel.c	/^   int32_t               routSizePrimROut;$/;"	m	struct:UnionType	typeref:typename:int32_t	file:
+routSizePrimROut	dsp/hexagon_Debug_toolv88_v79/calculator_skel.c	/^   uint32_t               routSizePrimROut;$/;"	m	struct:SequenceType	typeref:typename:uint32_t	file:
+routSizePrimROut	dsp/hexagon_Debug_toolv88_v79/calculator_stub.c	/^   int32_t               routSizePrimROut;$/;"	m	struct:StructType	typeref:typename:int32_t	file:
+routSizePrimROut	dsp/hexagon_Debug_toolv88_v79/calculator_stub.c	/^   int32_t               routSizePrimROut;$/;"	m	struct:UnionType	typeref:typename:int32_t	file:
+routSizePrimROut	dsp/hexagon_Debug_toolv88_v79/calculator_stub.c	/^   uint32_t               routSizePrimROut;$/;"	m	struct:SequenceType	typeref:typename:uint32_t	file:
+run_single_test	dsp/calculator_imp.c	/^static int run_single_test(uint32_t m, uint32_t k, uint32_t n, int transY) {$/;"	f	typeref:typename:int	file:
+seqType	dsp/hexagon_Debug_toolv88_v79/calculator_skel.c	/^   const Type *         seqType;$/;"	m	struct:SequenceType	typeref:typename:const Type *	file:
+seqType	dsp/hexagon_Debug_toolv88_v79/calculator_stub.c	/^   const Type *         seqType;$/;"	m	struct:SequenceType	typeref:typename:const Type *	file:
+srcs	dsp/CMakeLists.txt	/^set(srcs$/;"	v
+stack	dsp/hexagon_Debug_toolv88_v79/calculator_skel.c	/^   uint8_t* stack;$/;"	m	struct:_allocator	typeref:typename:uint8_t *	file:
+stack	dsp/hexagon_Debug_toolv88_v79/calculator_stub.c	/^   uint8_t* stack;$/;"	m	struct:_allocator	typeref:typename:uint8_t *	file:
+stackEnd	dsp/hexagon_Debug_toolv88_v79/calculator_skel.c	/^   uint8_t* stackEnd;$/;"	m	struct:_allocator	typeref:typename:uint8_t *	file:
+stackEnd	dsp/hexagon_Debug_toolv88_v79/calculator_stub.c	/^   uint8_t* stackEnd;$/;"	m	struct:_allocator	typeref:typename:uint8_t *	file:
+strings	dsp/hexagon_Debug_toolv88_v79/calculator_skel.c	/^   const char*                    strings;$/;"	m	struct:Interface	typeref:typename:const char *	file:
+strings	dsp/hexagon_Debug_toolv88_v79/calculator_skel.c	/^static const char strings[74] = "input_matrix2\\0input_matrix1\\0transY\\0transX\\0output\\0clos/;"	v	typeref:typename:const char[74]	file:
+strings	dsp/hexagon_Debug_toolv88_v79/calculator_stub.c	/^   const char*                    strings;$/;"	m	struct:Interface	typeref:typename:const char *	file:
+strings	dsp/hexagon_Debug_toolv88_v79/calculator_stub.c	/^static const char strings[74] = "input_matrix2\\0input_matrix1\\0transY\\0transX\\0output\\0clos/;"	v	typeref:typename:const char[74]	file:
+test_calculator_sim	dsp/CMakeLists.txt	/^add_library(test_calculator_sim SHARED ${srcs})$/;"	t
+tree	dsp/all.mak	/^tree: $(SUPPORTED_VS)$/;"	t
+tree_clean	dsp/all.mak	/^tree_clean: $(SUPPORTED_VS_CLEAN)$/;"	t
+types	dsp/hexagon_Debug_toolv88_v79/calculator_skel.c	/^static const Type types[1] = {{0x4,{{(const uintptr_t)0,(const uintptr_t)1}}, 2,0x4}};$/;"	v	typeref:typename:const Type[1]	file:
+types	dsp/hexagon_Debug_toolv88_v79/calculator_skel.c	/^static const Type types[1];$/;"	v	typeref:typename:const Type[1]	file:
+types	dsp/hexagon_Debug_toolv88_v79/calculator_stub.c	/^static const Type types[1] = {{0x4,{{(const uintptr_t)0,(const uintptr_t)1}}, 2,0x4}};$/;"	v	typeref:typename:const Type[1]	file:
+types	dsp/hexagon_Debug_toolv88_v79/calculator_stub.c	/^static const Type types[1];$/;"	v	typeref:typename:const Type[1]	file:
+uScalars	dsp/hexagon_Debug_toolv88_v79/calculator_skel.c	/^   uint32_t                    uScalars;            \/\/no method index$/;"	m	struct:Method	typeref:typename:uint32_t	file:
+uScalars	dsp/hexagon_Debug_toolv88_v79/calculator_stub.c	/^   uint32_t                    uScalars;            \/\/no method index$/;"	m	struct:Method	typeref:typename:uint32_t	file:
+value16s	dsp/hexagon_Debug_toolv88_v79/calculator_skel.c	/^   const uint16_t*  value16s;$/;"	m	union:CaseValuePtr	typeref:typename:const uint16_t *	file:
+value16s	dsp/hexagon_Debug_toolv88_v79/calculator_stub.c	/^   const uint16_t*  value16s;$/;"	m	union:CaseValuePtr	typeref:typename:const uint16_t *	file:
+value32s	dsp/hexagon_Debug_toolv88_v79/calculator_skel.c	/^   const uint32_t*  value32s;$/;"	m	union:CaseValuePtr	typeref:typename:const uint32_t *	file:
+value32s	dsp/hexagon_Debug_toolv88_v79/calculator_stub.c	/^   const uint32_t*  value32s;$/;"	m	union:CaseValuePtr	typeref:typename:const uint32_t *	file:
+value64s	dsp/hexagon_Debug_toolv88_v79/calculator_skel.c	/^   const uint64_t*  value64s;$/;"	m	union:CaseValuePtr	typeref:typename:const uint64_t *	file:
+value64s	dsp/hexagon_Debug_toolv88_v79/calculator_stub.c	/^   const uint64_t*  value64s;$/;"	m	union:CaseValuePtr	typeref:typename:const uint64_t *	file:
+value8s	dsp/hexagon_Debug_toolv88_v79/calculator_skel.c	/^   const uint8_t*   value8s;$/;"	m	union:CaseValuePtr	typeref:typename:const uint8_t *	file:
+value8s	dsp/hexagon_Debug_toolv88_v79/calculator_stub.c	/^   const uint8_t*   value8s;$/;"	m	union:CaseValuePtr	typeref:typename:const uint8_t *	file:
+verify_naive	dsp/calculator_imp.c	/^static int verify_naive(float *A, float *B, float *C, uint32_t m, uint32_t k, uint32_t n, int tr/;"	f	typeref:typename:int	file:
+version	dsp/CMakePresets.json	/^  "version": 8,$/;"	n
+volatile	build/CMakeFiles/3.22.1/CompilerIdC/CMakeCCompilerId.c	/^# define volatile$/;"	d	file:
+代码编译与运行	Lab4.md	/^## 代码编译与运行$/;"	s	chapter:Lab4: Hexagon NPU GEMM
+任务目标	Lab4.md	/^## 任务目标$/;"	s	chapter:Lab4: Hexagon NPU GEMM
+使用 Hexagon 指令集优化矩阵乘法	Lab4.md	/^## 使用 Hexagon 指令集优化矩阵乘法$/;"	s	chapter:Lab4: Hexagon NPU GEMM
+关键优化概念	Lab4.md	/^#### 关键优化概念$/;"	t	subsection:Lab4: Hexagon NPU GEMM""使用 Hexagon 指令集优化矩阵乘法""HVX 指令参考手册
+基本概念：向量化处理	Lab4.md	/^#### 基本概念：向量化处理$/;"	t	subsection:Lab4: Hexagon NPU GEMM""使用 Hexagon 指令集优化矩阵乘法""HVX 指令参考手册
+实体设备运行 (推荐)	Lab4.md	/^### 实体设备运行 (推荐)$/;"	S	section:Lab4: Hexagon NPU GEMM""代码编译与运行
+实际应用示例	Lab4.md	/^#### 实际应用示例$/;"	t	subsection:Lab4: Hexagon NPU GEMM""使用 Hexagon 指令集优化矩阵乘法""HVX 指令参考手册
+常见问题	Lab4.md	/^## 常见问题$/;"	s	chapter:Lab4: Hexagon NPU GEMM
+性能提升原理	Lab4.md	/^#### 性能提升原理$/;"	t	subsection:Lab4: Hexagon NPU GEMM""使用 Hexagon 指令集优化矩阵乘法""HVX 指令参考手册
+核心HVX指令功能说明	Lab4.md	/^#### 核心HVX指令功能说明$/;"	t	subsection:Lab4: Hexagon NPU GEMM""使用 Hexagon 指令集优化矩阵乘法""HVX 指令参考手册
+模拟器运行 (备选)	Lab4.md	/^### 模拟器运行 (备选)$/;"	S	section:Lab4: Hexagon NPU GEMM""代码编译与运行
+环境准备	Lab4.md	/^## 环境准备$/;"	s	chapter:Lab4: Hexagon NPU GEMM
+目录	Lab4.md	/^## 目录$/;"	s	chapter:Lab4: Hexagon NPU GEMM
+编译 NPU 代码	Lab4.md	/^### 编译 NPU 代码$/;"	S	section:Lab4: Hexagon NPU GEMM""代码编译与运行
